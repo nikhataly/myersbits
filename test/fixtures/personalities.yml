@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  extraversion: 1
+  openness: 1
+  agreeableness: 1
+  conscientiousness: 1
+
+two:
+  extraversion: 1
+  openness: 1
+  agreeableness: 1
+  conscientiousness: 1
