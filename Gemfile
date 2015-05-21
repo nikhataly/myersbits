@@ -39,7 +39,9 @@ group :development, :test do
   gem 'byebug'
   gem 'best_errors'
   gem 'pry-rails'
-
+  gem 'quiet_assets'
+  gem 'awesome_print'
+  gem 'did_you_mean'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
