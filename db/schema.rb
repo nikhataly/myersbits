@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(version: 20150522000234) do
   end
 
   create_table "personalities", force: :cascade do |t|
-    t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "ptype"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "personality_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -53,7 +54,6 @@ ActiveRecord::Schema.define(version: 20150522000234) do
     t.integer  "openness"
     t.integer  "agreeableness"
     t.integer  "conscientiousness"
-    t.integer  "personality_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

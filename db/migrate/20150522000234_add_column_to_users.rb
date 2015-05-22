@@ -1,5 +1,6 @@
 class AddColumnToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :personality_id, :integer
+    remove_column :personalities, :type
+    add_column :personalities, :personality_id, :integer
   end
 end

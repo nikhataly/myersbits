@@ -1,7 +1,7 @@
 class CreatePersonalities < ActiveRecord::Migration
   def change
     create_table :personalities do |t|
-      t.string :type
+      t.string :ptype
 
       t.timestamps null: false
     end

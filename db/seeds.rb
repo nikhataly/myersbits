@@ -23,6 +23,6 @@
   "ESFJ",
   "ENFJ",
   "ENTJ",
-].each do |name|
-    Personality.create(type: name)
+].each do |ptype|
+    Personality.create(ptype: ptype)
 end
