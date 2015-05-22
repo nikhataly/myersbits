@@ -6,3 +6,5 @@ class AddColumnsToUsers < ActiveRecord::Migration
     add_column :users, :conscientiousness, :integer
   end
 end
+
+

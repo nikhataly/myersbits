@@ -3,8 +3,8 @@
 one:
   title: MyString
   description: MyText
-  start_date: 2015-05-21 17:53:01
-  end_date: 2015-05-21 17:53:01
+  start_date: 2015-05-21 19:06:15
+  end_date: 2015-05-21 19:06:15
   location: MyText
   founder_id: 1
   type_id: 1
@@ -12,8 +12,8 @@ one:
 two:
   title: MyString
   description: MyText
-  start_date: 2015-05-21 17:53:01
-  end_date: 2015-05-21 17:53:01
+  start_date: 2015-05-21 19:06:15
+  end_date: 2015-05-21 19:06:15
   location: MyText
   founder_id: 1
   type_id: 1
