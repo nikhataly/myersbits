@@ -1,4 +1,4 @@
-class MembershipController < ApplicationController
+class MembershipsController < ApplicationController
   def new
   end
 

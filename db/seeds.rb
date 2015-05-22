@@ -22,7 +22,7 @@
   "ESTJ",
   "ESFJ",
   "ENFJ",
-  "ENTJ",
+  "ENTJ"
 ].each do |ptype|
     Personality.create(ptype: ptype)
 end
