@@ -24,4 +24,5 @@
   "ENFJ",
   "ENTJ",
 ].each do |name|
-    Category.create(name: name)
+    Personality.create(type: name)
+end
