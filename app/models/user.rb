@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :projects, through: :memberships
   has_many :projects
   belongs_to :personality
+  has_many :scores
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

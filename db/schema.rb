@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 20150522000234) do
   end
 
   create_table "personalities", force: :cascade do |t|
-    t.string   "ptype"
+    t.string   "mbti"
+    t.string   "title"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "personality_id"
