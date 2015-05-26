@@ -18,8 +18,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @personality = @user.personality
-    @projects=@user.projects
+
+    @projects = Project.where(founder_id: @user.id)
   end
 
 
