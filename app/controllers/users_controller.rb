@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  
+
 
   def new
     @user = User.new
+
   end
 
   def create
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # @personality = @user.personality
     @projects=@user.projects
   end
 

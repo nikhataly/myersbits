@@ -23,9 +23,8 @@ ActiveRecord::Schema.define(version: 20150525201033) do
   create_table "personalities", force: :cascade do |t|
     t.string   "mbti"
     t.string   "title"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "personality_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
@@ -55,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150525201033) do
     t.string   "email",                           null: false
     t.string   "crypted_password"
     t.string   "salt"
+    t.integer  "personality_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "reset_password_token"
@@ -62,10 +62,6 @@ ActiveRecord::Schema.define(version: 20150525201033) do
     t.datetime "reset_password_email_sent_at"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
-    t.integer  "extraversion"
-    t.integer  "openness"
-    t.integer  "agreeableness"
-    t.integer  "conscientiousness"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
