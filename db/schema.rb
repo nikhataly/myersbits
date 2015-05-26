@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(version: 20150525201033) do
     t.text     "location"
     t.integer  "founder_id"
     t.integer  "type_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "participants"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "scores", force: :cascade do |t|

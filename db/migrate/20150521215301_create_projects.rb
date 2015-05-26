@@ -9,6 +9,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :location
       t.integer :founder_id
       t.integer :type_id
+      t.integer :participants
 
       t.timestamps null: false
     end
