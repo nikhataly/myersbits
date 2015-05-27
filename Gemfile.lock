@@ -70,6 +70,8 @@ GEM
     foundation-rails (5.5.2.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
+    frozen_record (0.4.0)
+      activemodel
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -189,6 +191,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   did_you_mean
   foundation-rails
+  frozen_record
   jbuilder (~> 2.0)
   jquery-rails
   pry-rails

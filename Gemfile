@@ -34,6 +34,7 @@ gem 'foundation-rails'
 # gem 'capistrano-rails', group: :development
 
 gem 'sorcery'
+gem 'frozen_record'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

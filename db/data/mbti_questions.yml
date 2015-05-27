@@ -1,0 +1,130 @@
+-
+  id: 1
+  left_most: "makes lists"
+  right_most: "relies on memory"
+-
+  id: 2
+  left_most: "skeptical"
+  right_most: "wants to believe"
+-
+  id: 3
+  left_most: "bored by time alone"
+  right_most: "needs time alone"
+-
+  id: 4
+  left_most: "accepts things as they are"
+  right_most: "unsatisfied with the ways things are"
+-
+  id: 5
+  left_most: "keeps a clean room"
+  right_most: "just puts stuff where ever"
+-
+  id: 6
+  left_most: "thinks robotic' is an insult"
+  right_most: "strives to have a mechanical mind"
+-
+  id: 7
+
+  left_most: "energetic"
+  right_most: "mellow"
+-
+  id: 8
+  left_most: "prefer to take multiple choice test"
+  right_most: "prefer essay answers"
+-
+  id: 9
+  left_most: "chaotic"
+  right_most: "organized"
+-
+  id: 10
+  left_most: "easily hurt"
+  right_most: "thick-skinned"
+-
+  id: 11
+  left_most: "works best in groups"
+  right_most: "works best alone"
+-
+  id: 12
+  left_most: "focused on the present"
+  right_most: "focused on the future"
+-
+  id: 13
+  left_most: "plans far ahead"
+  right_most: "plans at the last minute"
+
+  id: 14
+  left_most: "wants people's respect"
+  right_most: "wants their love"
+-
+  id: 15
+  left_most: "gets worn out by parties"
+  right_most: "gets fired up by parties"
+
+  id: 16
+  left_most: "fits in"
+  right_most: "stands out"
+
+  id: 17
+  left_most: "keeps options open"
+  right_most: "commits"
+-
+  id: 18
+  left_most: "wants to be good at fixing things"
+  right_most: "wants to be good at fixing people"
+-
+  id: 19
+  left_most: "talks more"
+  right_most:"listens more"
+-
+  id: 20
+  left_most: "when describing an event, will tell people what happened"
+  right_most:"when describing an event, will tell people what it meant"
+-
+  id: 21
+  left_most: "gets work done right away"
+  right_most: "procrastinates"
+-
+  id: 22
+  left_most: "follows the heart"
+  right_most: "follows -the head"
+-
+  id: 23
+  left_most: "stays at home"
+  right_most: "goes out on the town"
+-
+  id: 24
+  left_most: "wants the big picture"
+  right_most: "wants the details"
+-
+  id: 25
+  left_most: "improvises"
+  right_most: "prepares"
+-
+  id: 26
+  left_most: "bases morality on justice"
+  right_most:"bases morality on compassion"
+-
+  id: 27
+  left_most: "finds it difficult to yell very loudly"
+  right_most:"yelling to others when they are far away comes naturally"
+-
+  id: 28
+  left_most: "theoretical"
+  right_most:"empirical"
+-
+  id: 29
+  left_most: "works hard"
+  right_most: "plays hard"
+-
+  id: 30
+  left_most: "uncomfortable with emotions"
+  right_most:"values emotions"
+-
+  id: 31
+  left_most: "likes to perform in front of other people"
+  right_most:"avoids public speaking"
+-
+  id: 32
+  left_most: "likes to know 'who?', 'what?', 'when?'"
+  right_most:"likes to know 'why'"
+
