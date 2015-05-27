@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   get 'new/create'
 
   get 'new/edit'
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root 'projects#index'
-
+  resources :scores
   resources(:projects) do
     resources(:memberships, only: [:new, :create, :destroy, :index])
   end

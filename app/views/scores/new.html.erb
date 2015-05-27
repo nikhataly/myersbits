@@ -1,0 +1,19 @@
+<h1>Scores#new</h1>
+<p>Find me in app/views/scores/new.html.erb</p>
+
+<%= form_for @score do |f| %>
+  
+  <% Score.questions.each_with_index do |q, index| %>
+    <%= q[0] %>
+    <% (1..5).each do |n| %>
+      <% if n == 3 %>
+        <%= radio_button_tag("answers[#{index}]", n, checked: true) %>
+      <% else %>
+        <%= radio_button_tag("answers[#{index}]", n) %>
+      <% end %>
+    <% end %>
+    <%= q[1] %>
+    <hr>
+  <%end%>
+  <%= f.submit %>
+<% end %>

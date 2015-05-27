@@ -1,3 +1,4 @@
+require 'pry'
 relationships = {
   isfp: {
     kindred: %i[isfp istp esfp isfj],
@@ -111,6 +112,7 @@ relationships = {
   challenging: %i[intp intj infj entj],
  }
 }
+binding.pry
 # Operations to implement:
 # Find all users who complement/inspire/challenge/kindred me
 # Given two users, figure out how they relate to each other
