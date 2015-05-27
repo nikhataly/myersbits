@@ -1,1 +1,8 @@
-_project.html.erb
+<div class="well">
+  <p> Project: <%= link_to project.title, project_path(project.id) %> <br>
+    Description: <%=project.description %> <br>
+    Start Date: <%= project.start_date %> <br>
+    Location: <%= project.location %> <br>
+    Founder: <%= project.founder %> <br>
+    Number of Participants: <%= project.participants %></p>
+</div>

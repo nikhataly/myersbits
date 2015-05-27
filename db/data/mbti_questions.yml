@@ -51,7 +51,7 @@
   id: 13
   left_most: "plans far ahead"
   right_most: "plans at the last minute"
-
+-
   id: 14
   left_most: "wants people's respect"
   right_most: "wants their love"
@@ -59,11 +59,11 @@
   id: 15
   left_most: "gets worn out by parties"
   right_most: "gets fired up by parties"
-
+-
   id: 16
   left_most: "fits in"
   right_most: "stands out"
-
+-
   id: 17
   left_most: "keeps options open"
   right_most: "commits"
