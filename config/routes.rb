@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'new/create'
+
+  get 'new/edit'
+
+  get 'new/destroy'
+
+  get 'new/show'
+
   get 'sessions/new'
 
   root 'projects#index'
