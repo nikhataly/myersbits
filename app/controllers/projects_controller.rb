@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
-  
+
   def index
     @projects=Project.all
   end
 
   def show
     @project = Project.find(params[:id])
+    @founder = @project.founder
   end
 
   def new
@@ -36,7 +37,7 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
-  
+
   private
 
   def project_params

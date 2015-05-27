@@ -26,6 +26,6 @@
     Personality.create(mbti: mbti, title: title)
 end
 
-User.create(email: "nikhataly@hotmail.com", password: 'abcd')
+User.create(email: "me@me.com", password: 'abcd', personality_id: 14)
 
-Project.create(title: "Crowdfunder Practice Session", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 26 May 2015", end_date: "Fri, 29 May 2015", participants: '5', founder_id: '1')
+Project.create(title: "Crowdfunder Practice Session", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", participants: 5, founder_id: 1)
