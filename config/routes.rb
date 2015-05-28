@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources(:recommendations, only: [:show, :index])
   end
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show] do
+    get :autocomplete_skill_name, :on => :collection
+  end
 
   resources :sessions, only: [:new,:create, :destroy]
 

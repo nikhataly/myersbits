@@ -5,8 +5,10 @@
     Location: <%= project.location %> <br>
     Founder: <%= project.user.name %> <br>
     Number of Participants: <%= project.participants %><br>
+    Number of empty slots: <%= project.participants - project.memberships.accepted.count%> <br>
     Skills required: <%= project.skills_required %></p>
 
      <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%> 
+
 
 </div>

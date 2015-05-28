@@ -24,9 +24,9 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if project.update_attributes(project_params)
-      redirect_to project_path(@project), notice => "Project founder has been notified of your participation request!"
+      redirect_to project_path(@project)
     else
-      render :edit,  :notice => "Project participation request didn't go through, please try again!"
+      render :edit
     end
   end
 

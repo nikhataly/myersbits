@@ -14,7 +14,8 @@ class MembershipsController < ApplicationController
         if @membership.save
           redirect_to project_url(@project), :notice => "Project founder has been notified of your participation request!"
         else 
-          render "/projects/show",  :notice => "Project participation request didn't go through, please try again!" 
+          flash[:notice] = "Project participation request didn't go through, please try again!" + @membership.errors.full_messages.join(',') 
+          render "/projects/show" 
         end
       end
   end
@@ -23,12 +24,12 @@ class MembershipsController < ApplicationController
   end
   
   def update
-    @membership=Membership.find(params[:membership_id])
+    @membership=Membership.find(params[:id])
     @membership.pending = false
     if @membership.save
           redirect_to user_url(current_user), :notice => "Project participant will receive your acceptance notification!"
         else 
-          render "/users/show",  :notice => "Project participant not accepted, please try again!" 
+          render "/users/show",  :notice => "Project participant not accepted, please try again!" + @membership.errors.full_messages.join(',')
     end
   end
 end

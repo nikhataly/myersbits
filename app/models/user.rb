@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :founded_projects, class_name: "Project"
   belongs_to :personality
   has_many :scores
+  has_many :skills
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
