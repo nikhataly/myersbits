@@ -3,9 +3,10 @@
     Description: <%=project.description %> <br>
     Start Date: <%= project.start_date %> <br>
     Location: <%= project.location %> <br>
-    Founder: <%= project.founder.email %> <br>
-    Number of Participants: <%= project.participants %></p>
+    Founder: <%= @founder.name %> <br>
+    Number of Participants: <%= project.participants %><br>
+    Skills required: <%= project.skills_required %></p>
 
-     <%= button_to 'Join this project', project_path, :method => 'post'%>
+     <%= button_to 'Join this project'%>, project_path, :method => 'post'
 
 </div>

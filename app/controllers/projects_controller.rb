@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    #@founder = User.where(id:founder_id)
+    @founder = @project.founder #User.where(id:founder_id)
   end
 
   def new
