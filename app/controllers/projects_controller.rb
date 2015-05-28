@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @founder = @project.founder #User.where(id:founder_id)
+    @founder = @project.user #User.where(id:founder_id)
   end
 
   def new
@@ -24,9 +24,9 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if project.update_attributes(project_params)
-      redirect_to project_path(@project)
+      redirect_to project_path(@project), notice => "Project founder has been notified of your participation request!"
     else
-      render :edit
+      render :edit,  :notice => "Project participation request didn't go through, please try again!"
     end
   end
 
