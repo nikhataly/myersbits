@@ -1,21 +1,10 @@
 Rails.application.routes.draw do
 
-
-
-  get 'new/create'
-
-  get 'new/edit'
-
-  get 'new/destroy'
-
-  get 'new/show'
-
-  get 'sessions/new'
-
   root 'projects#index'
   resources :scores
   resources(:projects) do
     resources(:memberships, only: [:new, :create, :destroy, :index])
+    resources(:recommendations, only: [:show, :index])
   end
 
   resources :users, only: [:new, :create, :show]

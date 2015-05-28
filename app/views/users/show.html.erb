@@ -1,13 +1,21 @@
 
 <p>
- <strong>MBTI:</strong>
+ <strong>My MBTI:</strong>
 
   <%= @user.personality.mbti %>
 
  </p>
 
+<p>
+ <strong>My profile:</strong>
+
+  <%= @user.personality.title %>
+
+ </p>
+
+
  <% @projects.each do |project| %>
- <%= project.title %> <br> <%=project.description %> <br> <%= project.participants %> <br>
+ Project: <%= project.title %> <br>Description: <%=project.description %> <br> Participants needed: <%= project.participants %> <br> Skills required: <%= project.skills_required %> <br>
   <% end %>
 
 

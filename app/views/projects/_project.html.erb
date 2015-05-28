@@ -5,4 +5,7 @@
     Location: <%= project.location %> <br>
     Founder: <%= project.founder.email %> <br>
     Number of Participants: <%= project.participants %></p>
+
+     <%= button_to 'Join this project', project_path, :method => 'post'%>
+
 </div>

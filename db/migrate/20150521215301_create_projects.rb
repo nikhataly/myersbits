@@ -10,6 +10,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :founder_id
       t.integer :type_id
       t.integer :participants
+      t.string :skills_required
 
       t.timestamps null: false
     end

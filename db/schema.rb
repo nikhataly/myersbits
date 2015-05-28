@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525201033) do
+ActiveRecord::Schema.define(version: 20150528031027) do
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "project_id"
@@ -36,8 +36,17 @@ ActiveRecord::Schema.define(version: 20150525201033) do
     t.integer  "founder_id"
     t.integer  "type_id"
     t.integer  "participants"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "skills_required"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "recommendations", force: :cascade do |t|
+    t.string   "personality_id"
+    t.string   "recommendation"
+    t.string   "text"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "scores", force: :cascade do |t|
@@ -45,7 +54,6 @@ ActiveRecord::Schema.define(version: 20150525201033) do
     t.integer  "openness"
     t.integer  "agreeableness"
     t.integer  "conscientiousness"
-    t.text     "answers"
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
@@ -56,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150525201033) do
     t.string   "crypted_password"
     t.string   "salt"
     t.integer  "personality_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "reset_password_token"
