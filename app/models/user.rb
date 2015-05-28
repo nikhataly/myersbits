@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  has_many :projects, through: :memberships
-  has_many :projects
+  has_many :memberships
+  has_many :membership_requests, through: :founded_projects, source: :memberships
+  has_many :joined_projects, class_name: "Project", through: :memberships, source: :project
+  has_many :founded_projects, class_name: "Project"
   belongs_to :personality
   has_many :scores
 

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528031027) do
+ActiveRecord::Schema.define(version: 20150528205302) do
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "project_id"
-    t.integer  "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "pending",    default: true
   end
 
   create_table "personalities", force: :cascade do |t|
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150528031027) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.text     "location"
-    t.integer  "founder_id"
+    t.integer  "user_id"
     t.integer  "type_id"
     t.integer  "participants"
     t.string   "skills_required"

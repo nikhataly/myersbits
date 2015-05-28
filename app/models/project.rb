@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  belongs_to :founder, class_name: "User"
+  belongs_to :user
   has_many :memberships
   has_many :members, through: :memberships, source: :member
 
