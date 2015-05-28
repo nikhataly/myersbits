@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528031027) do
+ActiveRecord::Schema.define(version: 20150528200614) do
+
+  create_table "compatibilities", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+  end
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "project_id"
@@ -36,9 +43,8 @@ ActiveRecord::Schema.define(version: 20150528031027) do
     t.integer  "founder_id"
     t.integer  "type_id"
     t.integer  "participants"
-    t.string   "skills_required"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -47,6 +53,14 @@ ActiveRecord::Schema.define(version: 20150528031027) do
     t.string   "text"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "primary_id"
+    t.integer  "compatibility_id"
+    t.integer  "secondary_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "scores", force: :cascade do |t|
@@ -64,7 +78,6 @@ ActiveRecord::Schema.define(version: 20150528031027) do
     t.string   "crypted_password"
     t.string   "salt"
     t.integer  "personality_id"
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "reset_password_token"

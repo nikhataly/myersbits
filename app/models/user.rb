@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :projects, through: :memberships
   has_many :projects
   belongs_to :personality
+  has_many :relationships, through: :personality
   has_many :scores
 
   validates_confirmation_of :password
@@ -12,3 +13,6 @@ class User < ActiveRecord::Base
 
 
 end
+# team.each do |team_member|
+#   current_user.relationships.where(secondary: team_member.personality).first.compatibility
+# end
