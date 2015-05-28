@@ -193,5 +193,3 @@ kindred.save
 kindred = Compatibility.find_by_title("Kindred")
 kindred.description = "People of the following type present the most potential for personality clash and conflict with your personality type, but also the best opportunities for growth. Because people of these types have fundamentally different values and motivations from your's, initially, it may seem impossible to relate. But because they are so different, their strengths are the your weaknesses, and if you are able to develop a healthy working relationship, you can learn a tremendous amount from each other."
 kindred.save
-=======
->>>>>>> 2e1bf438149854d1b47b977906e3e365e375250e

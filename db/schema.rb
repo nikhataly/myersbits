@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(version: 20150528205302) do
     t.integer  "user_id"
     t.integer  "type_id"
     t.integer  "participants"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "skills_required"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20150528205302) do
     t.string   "crypted_password"
     t.string   "salt"
     t.integer  "personality_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "reset_password_token"
