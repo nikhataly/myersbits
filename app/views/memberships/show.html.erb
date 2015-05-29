@@ -1,0 +1,11 @@
+  <% if @membership.pending == true %>
+  <h3> This is a pending request </h3>
+    <p> Project Title: <%= @membership.project.title %> </p>
+    <p> Member Name: <%= @membership.user.name %> </p>
+    <p> Member Personality: <%= @membership.user.personality.mbti %>, <%= @membership.user.personality.title %> </p>
+    <p> Compatibility: <%= @relationship.compatibility.title %> </p>
+    <p>    How you work with this type: </br><%= @relationship.compatibility.description %> </p>
+    <p> This type at work: <br><%= @membership.user.personality.at_work %></p>
+    <p> This type in a team: <br><%= @membership.user.personality.as_team %></p>
+    <p> This type as a leader: <br><%= @membership.user.personality.as_leader %> </p>
+    <% end %>

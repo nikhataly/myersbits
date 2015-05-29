@@ -1,0 +1,20 @@
+
+<h3>Membership</h3> </br>
+
+<% @memberships.each do |member| %>
+  <% if member.pending == true %>
+  <h1> Pending: </h1>
+    <p>Project Title: <%= member.project.title %></p>
+    <p>Member Name: <%= member.user.name %></p>
+    <p>Member Personality: <%= member.user.personality.title %></p>
+
+  <% else %>
+
+  <h1> Accepted: </h1>
+    <p>Project Title: <%= member.project.title %></p>
+    <p>Member Name: <%= member.user.name %></p>
+    <p>Member Personality: <%= member.user.personality.title %></p>
+  <% end %>
+<% end %>
+
+

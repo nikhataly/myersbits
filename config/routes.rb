@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'projects#index'
   resources :scores
   resources(:projects) do
-    resources(:memberships, only: [:new, :create, :destroy, :index, :update])
+    resources(:memberships, only: [:new, :create, :show, :destroy, :index, :update])
     resources(:recommendations, only: [:show, :index])
   end
 

@@ -14,7 +14,19 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
 
+  def is_founder?
+    @project.self == current_user
+  end
+
+  def is_member?
+    @project.memberships.self == current_user
+  end
+
+
 end
 # team.each do |team_member|
 #   current_user.relationships.where(secondary: team_member.personality).first.compatibility
 # end
+
+
+  

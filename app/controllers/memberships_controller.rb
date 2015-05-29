@@ -1,4 +1,18 @@
 class MembershipsController < ApplicationController
+before_filter :load_project
+before_filter :is_founder? 
+
+  def index
+    @project = load_project
+    @memberships = @project.memberships
+  end
+
+  def show
+    @project = load_project
+    @membership = Membership.find(params[:id])
+    @relationship = current_user.relationships.where(secondary: @membership.user.personality).first
+  end
+
   def new
   end
 
@@ -34,5 +48,14 @@ class MembershipsController < ApplicationController
         else 
           render "/users/show",  :notice => "Project participant not accepted, please try again!" + @membership.errors.full_messages.join(',')
    end
+  end
+
+private
+  def load_project
+    @project = Project.find(params[:project_id])
+  end
+
+  def is_founder?
+    @project.user == current_user
   end
 end

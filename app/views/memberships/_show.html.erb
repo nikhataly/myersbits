@@ -1,0 +1,10 @@
+  
+  <% if membership.pending == 'True' %>
+  <h1> This is a pending request </h1>
+    <p> Project Title: <%= member.project.title %> </p>
+    <p> Member Name: <%= member.user.name %> </p>
+    <p> Member Personality: <%= member.user.personality.title %> </p>
+    <p> Compatibility: <%= @relationship.compatibility.title %>
+        How you work with this type: <%= @relationship.compatibility.description %>
+    
+    <% end %>
