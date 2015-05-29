@@ -23,12 +23,13 @@ class MembershipsController < ApplicationController
   end
   
   def update
-    @membership=Membership.find(params[:membership_id])
-    @membership.pending = false
+    @membership = Membership.find(params[:id])
     if @membership.save
+      @membership.pending = false
+      @membership.save  
           redirect_to user_url(current_user), :notice => "Project participant will receive your acceptance notification!"
         else 
-          render "/users/show",  :notice => "Project participant not accepted, please try again!" 
+          render "/users/show", :notice => "Project participant not accepted, please try again!" 
     end
   end
 end
