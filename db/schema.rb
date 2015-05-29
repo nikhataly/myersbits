@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150528225532) do
 
+  create_table "compatibilities", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "user_id"
@@ -48,6 +55,14 @@ ActiveRecord::Schema.define(version: 20150528225532) do
     t.string   "text"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "primary_id"
+    t.integer  "compatibility_id"
+    t.integer  "secondary_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "scores", force: :cascade do |t|

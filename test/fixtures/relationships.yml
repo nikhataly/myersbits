@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  primary_id: 1
+  compatibility_id: 1
+  secondary_id: 1
+
+two:
+  primary_id: 1
+  compatibility_id: 1
+  secondary_id: 1
