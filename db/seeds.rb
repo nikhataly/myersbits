@@ -3,8 +3,8 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+  # Mayor.create(name: 'Emanuel', city: cities.first)
 {
   "ISTJ" => "The Inspector",
   "ISFJ" => "The Protector",
@@ -47,6 +47,150 @@ Project.create(title: "E-commerce web platform ", description: "Come work with m
 Project.create(title: "Learning session Ruby on Rails Rubeque exercises", description: "Willing to work together with other junior web devs on polishing our Ruby skills with Rubeque", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 2, user_id: user4.id, skills_required: "Ruby on Rails")
 Project.create(title: "Curiculum Vitae Web developer", description: "Looking to polish my resume and getting a second opinion, willing to help back with resume", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 3, user_id: user5.id, skills_required: "Resume tips")
 
+<<<<<<< HEAD
+print "done"
+
+# @sts = [
+# "Server-Side",
+# "Ruby", 
+# "Ruby on Rails 2.x, 3.x, 4.x  ( MVC rapid application development)",
+# "Key Ruby on Rails Gems / methodologies",
+# "Ruby Gem management",
+# "Ruby Gem production", 
+# "Rapid coding: HAML, SASS, Textile, Markdown",
+# "Authentication: authlogic, devise",
+# "Cloud 'AWS', Services: http://amazon.rubyforge.org/ (Amazon S3, EC2), youtube_it",
+# "Ecommerce: authorize_net",
+# "Ruby on Rails CMS sytems",
+# "Refinery",
+# "Radiant", 
+# "Ruby on Rails Hosting",
+# "Heroku", 
+# "HostMonster", 
+# "DreamHost",
+# "RailsPlayground", 
+# "PHP 4/5", 
+# "PHP CMSs",
+# "Wordpress (content management)", 
+# "Drupal (content management)", 
+# "Joomla (content management)", 
+# "PHP Frameworks",
+# "Cake PHP (model view controller) ",
+# "Zend Framework (model view controler)", 
+# "Smarty Framwork/Template Engine ",
+# "Code Igniter (model view controler)", 
+# "Pear Repository", 
+# "MDB2  (Db abstraction)",
+# "DB Table  (Active Record / DB objectification)",
+# "HTML QuickForm  (High level form generation)",
+# "Perl", 
+# "ASP ",
+# "Python #",
+# "VBScript", 
+# "Linux Command Line", 
+# "Database",
+# "SQL ",
+# "MySQL ",
+# "SQLite(3)", 
+# "Postgres ",
+# "MS Access (odbc) ",
+# "Delimited text ",
+# "Database abstraction", 
+# "PDO ",
+# "Ruby Active Record ",
+# "NoSQL",
+# "MongoDB ",
+# "Apache Server:",
+# ".htaccess ",
+# ".htpasswd ",
+# "httpdconf ",
+# "mod rewrite ",
+# "Version Control",
+# "Git",
+# "Subversion ",
+# "Web Services",
+# "Amazon Services",
+# "Amazon S3 (simple storage service) ",
+# "Amazon SES API (simple email service)", 
+# "Server / System Administration",
+# "Ubuntu Server",
+# "CentOs",
+# "RedHat",
+# "VirtualMin",
+# "Virtual Private Servers (VPS)",
+# "Dedicated Servers",
+# "EC2",
+# "E-Commerce",
+# "Authorize.net gateway API ",
+# "Paypal integration ",
+# "Google checkout integration", 
+# "Google wallet ",
+# "SSL",
+# "PCI data compliance",
+# "Coding Tools/Editors",
+# "VIM / GVIM (my favorite) ",
+# "Netbeans ",
+# "Dreamweaver", 
+# "NVU ",
+# "Eclipse", 
+# "Go Live ",
+# "Graphic Design, Photography, Audio Tools",
+# "Applications",
+# "Photoshop ",
+# "Gimp ",
+# "Freehand (vector) ",
+# "Fireworks (vector) ",
+# "Audacity (audio editor)", 
+# "Command Line Applications",
+# "ImageMagick",
+# "Client-Side",
+# "Standard Fare",
+# "(X)HTML",
+# "HTML5 ",
+# "Standards Compliance ",
+# "Table-less markup and layout ",
+# "HTML Forms (data collection and processing) ",
+# "HAML - powerful HTML abstraction language ",
+# "CSS2", "CSS3",
+# "SASS - Powerfull CSS abstraction language ",
+# "Compas - CSS 'framework' ",
+# "Twitter Bootstrap - CSS/JS front-end framework ",
+# "Zurb Foundation - CSS/JS front-end framework ",
+# "Design style influenced heavily by CSS Zen Garden ", 
+# "Javascript (DOM) ",
+# "Unobtrusive Javascript ",
+# "CLient-Side Validation", 
+# "Asynchronous Javascript (AJAX) ",
+# "Light Box (image viewer/gallery)", 
+# "FLowplayer (video player) ",
+# "Backbone Js (front-end MVC) ",
+# "Angular Js (front-end MVC)", 
+# "Javascript Frameworks",
+# "JQuery ",
+# "prototype ",
+# "scriptaculous", 
+# "Mootools", 
+# "Flash",
+# "Flash Actionscript 3", 
+# "Flash Animation ",
+# "Flash vector graphics", 
+# "English ",
+# "French ",
+# "Spanish ",
+# "Italian ",
+# "Chinese ",
+# "German "]
+
+# def seed_me
+#   @sts.each do |st|
+#     Skill.create!(
+#       name: st
+#       )
+#   end
+# end
+
+# seed_me
+=======
 
 ["Kindred", "Inspiring", "Complementing", "Challenging"].each do |n|
     Compatibility.create(title: n)
@@ -193,3 +337,4 @@ kindred.save
 kindred = Compatibility.find_by_title("Kindred")
 kindred.description = "People of the following type present the most potential for personality clash and conflict with your personality type, but also the best opportunities for growth. Because people of these types have fundamentally different values and motivations from your's, initially, it may seem impossible to relate. But because they are so different, their strengths are the your weaknesses, and if you are able to develop a healthy working relationship, you can learn a tremendous amount from each other."
 kindred.save
+>>>>>>> 9a7ab98fd561ac4e2c6f1621fab083c2c9f67768
