@@ -58,7 +58,7 @@ class Score < ActiveRecord::Base
   end
 
   def mbti
-   
+
     s  = extraversion < 25 ? "I" : "E"
     s += openness < 25 ? "S" : "N"
     s += agreeableness < 25 ? "F" : "T"
