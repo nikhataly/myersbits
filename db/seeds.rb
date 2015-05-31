@@ -135,7 +135,7 @@ working_styles.each do |personality_str, hash|
   personality.at_work = hash[:at_work]
   personality.as_team = hash[:as_team]
   personality.as_leader = hash[:as_leader]
-  pesrsonality.save
+  personality.save
 end
 
 
