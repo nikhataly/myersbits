@@ -37,6 +37,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    autoprefixer-rails (5.2.0)
+      execjs
+      json
     awesome_print (1.6.1)
     bcrypt (3.1.10)
     best_errors (0.1.4)
@@ -48,6 +51,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.4.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -67,9 +73,6 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    foundation-rails (5.5.2.1)
-      railties (>= 3.1.0)
-      sass (>= 3.3.0, < 3.5)
     frozen_record (0.4.0)
       activemodel
     globalid (0.3.5)
@@ -186,10 +189,10 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   best_errors
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
   did_you_mean
-  foundation-rails
   frozen_record
   jbuilder (~> 2.0)
   jquery-rails
