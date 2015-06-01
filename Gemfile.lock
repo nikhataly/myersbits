@@ -67,9 +67,6 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    foundation-rails (5.5.2.1)
-      railties (>= 3.1.0)
-      sass (>= 3.3.0, < 3.5)
     frozen_record (0.4.0)
       activemodel
     globalid (0.3.5)
@@ -189,7 +186,6 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   did_you_mean
-  foundation-rails
   frozen_record
   jbuilder (~> 2.0)
   jquery-rails
