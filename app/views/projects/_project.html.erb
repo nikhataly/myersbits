@@ -8,5 +8,5 @@
     Number of empty slots: <%= project.participants - project.memberships.accepted.count%> <br>
     Skills required: <%= project.skills_required %></p>
 
-     <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%> 
+     <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%>
 </div>

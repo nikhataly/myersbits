@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= yield(:title) %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -25,13 +25,13 @@
 
       <%= link_to "Log out", logout_path %>
       <% if current_user.membership_requests.any? %> <br>
-      <%= link_to pluralize(current_user.membership_requests.count, "pending participation request"), user_path(current_user.id)  %> 
+      <%= link_to pluralize(current_user.membership_requests.count, "pending participation request"), user_path(current_user.id)  %>
       <% end %>
     <% else %>
       <%= link_to "Sign up", signup_path %> or
       <%= link_to "Log in", login_path %>.
     <% end %>
 
-   
+
   </body>
 </html>

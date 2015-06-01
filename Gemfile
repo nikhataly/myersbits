@@ -26,6 +26,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #bootsrap
 gem 'bootstrap-sass'
 
+#font-awesome
+gem 'font-awesome-sass', '~> 4.3'
+
+# to use paginate
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
