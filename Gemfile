@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #bootsrap
 gem 'bootstrap-sass'
 
+gem 'ransack'
+
 #font-awesome
 gem 'font-awesome-sass', '~> 4.3'
 
