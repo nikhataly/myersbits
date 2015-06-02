@@ -24,8 +24,11 @@
   color:white;
  }*/
 
- .jumbotron {
-
-    background-image: url(../img/jumbotronbackground.jpg);
-
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url('bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
