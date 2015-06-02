@@ -4,7 +4,7 @@ before_filter :is_founder?
 
   def index
     @project = load_project
-    @memberships = @project.memberships
+    @memberships = @project.memberships.where(pending: t)
   end
 
   def show
