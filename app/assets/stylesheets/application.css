@@ -23,6 +23,11 @@
   opacity: 100%;
   color:white;
  }*/
+body { padding-top: 70px; }
+
+span.tab {
+  padding: 0 80px;
+}
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -31,4 +36,8 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.right {
+  text-align: right;
 }
