@@ -91,12 +91,23 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav">
         <li>
-            <a href="index.html">Pending Requests</a>
+          <a href="index.html"> 
+            <% if current_user.membership_requests.any? %> 
+              <%= link_to pluralize(current_user.membership_requests.count, "pending request"),user_path(current_user.id)  %>   
+            <% else %>
+              <%= link_to "Sign up", signup_path %> or
+              <%= link_to "Log in", login_path %>.
+            <% end %>
+          </a>
         </li>
         <li>
-            <a href="about.html">My Profile</a>
+            <a href="about.html">
+               <% if current_user %>
+                <%= link_to current_user.name, user_path(current_user.id) %>
+                <%= link_to "Log out", logout_path %></a>
+              <% end %>   
         </li>
       </ul>
     </div>
@@ -113,14 +124,7 @@
       <%= link_to current_user.email, user_path(current_user.id) %>
 
       <%= link_to "Log out", logout_path %>
-      <% if current_user.membership_requests.any? %> <br>
-      <%= link_to pluralize(current_user.membership_requests.count, "pending participation request"), user_path(current_user.id)  %>
-      <% end %>
-    <% else %>
-      <%= link_to "Sign up", signup_path %> or
-      <%= link_to "Log in", login_path %>.
     <% end %>
-
 
   </body>
 </html>

@@ -193,3 +193,22 @@ body {
   section{
     padding-left: 15px;
   }
+
+.well {
+  padding: 20px 100px;
+}
+
+  .well p {
+  color: #333;
+  line-height: 1.5em;
+  letter-spacing: .5px;
+  font-family: Avenir, Helvetica, sans-serif;
+}
+
+  .well h2 {
+  color: orange;
+}
+
+.nav li a {float:right;
+
+}

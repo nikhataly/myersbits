@@ -2,8 +2,8 @@ class ProjectsController < ApplicationController
 
   def index
     @projects=Project.all.paginate(page: params[:page])
-    @search = Project.ransack(params[:search])
-    @projects = @search.result(distinct: true).paginate(page: params[:page]) 
+    @search = Project.search(params[:q])
+    @projects = @search.result.order(:title).paginate(page: params[:page]) 
       
   end
 

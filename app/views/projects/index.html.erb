@@ -5,8 +5,8 @@
 
 <%= search_form_for @search do |s| %>  
   <div class="field">
-  <%= s.label :title_or_description_or_location_or_skills_required, "Search" %>
-  <%= s.text_field :title_or_description_or_location_or_skills_required %>
+  <%= s.label :title_or_description_or_location_or_skills_required_cont, "Search" %>
+  <%= s.text_field :title_or_description_or_location_or_skills_required_cont %>
   </div>
 
   <div class="submit"><%= s.submit "Submit"%></div>
@@ -14,9 +14,9 @@
 <% end %>
 <br>
 <div class='container'>
-<div id="projects">
+
   <%= render @projects %>
-</div>
+
 </div>
 
 <%= will_paginate @projects, renderer: BootstrapPagination::Rails %>
