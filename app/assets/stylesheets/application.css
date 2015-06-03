@@ -167,26 +167,26 @@ body {
         position: relative;
     }
 
-<<<<<<< HEAD
+
   nav:hover .forAnimate{
     opacity: 1;
   }
   section{
     padding-left: 15px;
   }
-
+}
 .well {
   padding: 20px 100px;
 }
 
-  .well p {
+.well p {
   color: #333;
   line-height: 1.5em;
   letter-spacing: .5px;
   font-family: Avenir, Helvetica, sans-serif;
 }
 
-  .well h2 {
+.well h2 {
   color: orange;
 }
 
@@ -194,9 +194,9 @@ body {
 
 }
 
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
-}
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+
 
