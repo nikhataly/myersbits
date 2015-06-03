@@ -3,10 +3,14 @@
 <h1>Projects</h1>
 
 
+<% @my_founded_projects.each do |project| %>
+  <%= project.title %>
+<% end %>
+
 <%= search_form_for @search do |s| %>
 
 
-  <%= s.text_field :title_or_description_or_location_or_skills_required_cont %>
+  <%= s.text_field :title_or_description_or_user_name_or_location_or_skills_required_cont %>
 
 
   <%= s.submit "Search"%>

@@ -71,7 +71,7 @@ body {
     margin-top: -20px;
     position: fixed;
     left: 250px;
-    width: 0;
+    width: 0px;
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
@@ -155,7 +155,7 @@ body {
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 200px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -167,7 +167,7 @@ body {
         position: relative;
     }
 
-<<<<<<< HEAD
+
   nav:hover .forAnimate{
     opacity: 1;
   }
