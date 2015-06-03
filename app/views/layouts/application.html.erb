@@ -13,7 +13,7 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -30,18 +30,20 @@
       <ul class="nav">
         <li>
           <a href="index.html">
-           <% if current_user %>
-                <%= link_to current_user.name, user_path(current_user.id) %>
-                <%= link_to "Log out", logout_path %></a>
-            <% else %>
-              <%= link_to "Sign up", signup_path %>
+          <% if current_user.nil? %>
+          <%= link_to "Sign up", signup_path %> 
               <%= link_to "Log in", login_path %>
+              <% else %>
+              <%= link_to current_user.name, user_path(current_user.id) %>
+              <%= link_to "Log out", logout_path %></a> 
+              <%= link_to pluralize(current_user.membership_requests.count, "pending request"),user_path(current_user.id)  %>   
+              
             <% end %>
           </a>
         </li>
         <li>
             <a href="about.html">
-              
+                
         </li>
       </ul>
     </div>
@@ -53,30 +55,25 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        Main Menu
                     </a>
                 </li>
                 <li>
                     <a href="#"></a>
                 </li>
                 <li>
-                    <a href="#">All Project</a>
+                    <a href="#"> <%= link_to "All projects", projects_path %></a>
                 </li>
                 <li>
-                    <a href="#">My Projects</a>
+                    <a href="#"><%= link_to "My projects"%></a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#">Myers Briggs types</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">My profile</a>
                 </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+                
             </ul>
         </div>
         </div>
