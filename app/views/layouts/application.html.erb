@@ -94,6 +94,10 @@
       <ul class="nav">
         <li>
           <a href="index.html">
+          <% if current_user %>
+                <%= link_to current_user.name, user_path(current_user.id) %>
+                <%= link_to "Log out", logout_path %></a>
+              <% end %>
             <% if current_user.membership_requests.any? %>
               <%= link_to pluralize(current_user.membership_requests.count, "pending request"),user_path(current_user.id)  %>
             <% else %>
@@ -104,10 +108,7 @@
         </li>
         <li>
             <a href="about.html">
-               <% if current_user %>
-                <%= link_to current_user.name, user_path(current_user.id) %>
-                <%= link_to "Log out", logout_path %></a>
-              <% end %>
+               
         </li>
       </ul>
     </div>
