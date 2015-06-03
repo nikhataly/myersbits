@@ -1,16 +1,16 @@
 
-
+<div class="well">
 <h1>Projects</h1>
 
 
-<%= search_form_for @search do |s| %>  
+<%= search_form_for @search do |s| %>
   <div class="field">
   <%= s.label :title_or_description_or_location_or_skills_required, "Search" %>
   <%= s.text_field :title_or_description_or_location_or_skills_required %>
   </div>
 
-  <div class="submit"><%= s.submit "Submit"%></div>
-
+  <div class="submit" style=""><%= s.submit "Submit"%></div>
+  </div>
 <% end %>
 <br>
 <div class='container'>
