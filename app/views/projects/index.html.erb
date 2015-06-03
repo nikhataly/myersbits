@@ -4,12 +4,12 @@
 
 
 <%= search_form_for @search do |s| %>
-  <div class="field">
-  <%= s.label :title_or_description_or_location_or_skills_required_cont, "Search" %>
-  <%= s.text_field :title_or_description_or_location_or_skills_required_cont %>
-  </div>
 
-  <div class="submit" style=""><%= s.submit "Submit"%></div>
+
+  <%= s.text_field :title_or_description_or_location_or_skills_required_cont %>
+
+
+  <%= s.submit "Search"%>
   </div>
 <% end %>
 <br>
