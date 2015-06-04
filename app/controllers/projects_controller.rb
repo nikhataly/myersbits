@@ -1,17 +1,20 @@
 class ProjectsController < ApplicationController
 
   def index
-       @my_founded_projects = Project.where(user_id = current_user)
     @projects=Project.all.paginate(page: params[:page])
     @search = Project.search(params[:q])
     @projects = @search.result.order(:title).paginate(page: params[:page])
-
   end
+
+
+  def mine
+    @memberships = Membership.all
+  end
+
 
   def show
     @project = Project.find(params[:id])
     @founder = @project.user #User.where(id:founder_id)
-
   end
 
   def new
@@ -34,7 +37,6 @@ class ProjectsController < ApplicationController
       render :edit
     end
   end
-
 
   def destroy
     @project = Project.find(params[:id])

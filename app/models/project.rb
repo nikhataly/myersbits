@@ -10,10 +10,10 @@ class Project < ActiveRecord::Base
     if start_date.present? && start_date < Date.today
       errors.add(:start_date, "can't be in the past")
     end
-  
+
   end
 
- 
+
   #  def is_participant?
   #   self.memberships.user_id != current_user.user_id
   # end

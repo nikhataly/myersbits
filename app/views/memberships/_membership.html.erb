@@ -2,7 +2,7 @@
 <h3>Membership</h3> </br>
 
 <% @memberships.each do |member| %>
-  <% if member.pending == true %>
+  <% if member.approved == false %>
   <h1> Pending: </h1>
     <p>Project Title: <%= member.project.title %></p>
     <p>Member Name: <%= member.user.name %></p>

@@ -1,0 +1,24 @@
+<%
+groups = {
+  :founded_projects => "Founded projects",
+  :my_pending_requests => "Pending projects",
+  :my_approved_requests => "Joined projects"
+}
+%>
+
+
+
+<% groups.each do |methodname, title| %>
+<div class="well">
+  <% projects = current_user.send(methodname) %>
+  <% if projects.any? %>
+      <h1><%= title %></h1>
+      <%= render current_user.send(methodname) %>
+  <% end %>
+  </div>
+<% end %>
+
+
+
+<% projects = current_user.joined_projects %>
+

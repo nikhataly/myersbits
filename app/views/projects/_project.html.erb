@@ -1,6 +1,6 @@
 <div class="well">
   <h2> Project: <%= link_to project.title, project_path(project.id) %></h2>
-    <p><em>Description: <%=project.description %><br>
+    <p><em>Description: <%= project.description %><br>
     Start Date: <%= project.start_date %> <br>
     Location: <%= project.location %> <br>
     Founder: <%= project.user.name %> <br>
@@ -8,6 +8,7 @@
     Number of empty slots: <%= project.participants - project.memberships.accepted.count%> <br>
     Skills required: <%= project.skills_required %></em></p>
 
-     <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%>
+    <% unless current_user.is_member?(project) or current_user.is_founder?(project) %>
+      <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%>
+    <% end %>
 </div>
-
