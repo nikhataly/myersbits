@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
+       @my_founded_projects = Project.where(user_id = current_user)
     @projects=Project.all.paginate(page: params[:page])
     @search = Project.search(params[:q])
     @projects = @search.result.order(:title).paginate(page: params[:page])
