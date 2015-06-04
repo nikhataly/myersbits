@@ -31,19 +31,19 @@
         <li>
           <a href="index.html">
           <% if current_user.nil? %>
-          <%= link_to "Sign up", signup_path %> 
+          <%= link_to "Sign up", signup_path %>
               <%= link_to "Log in", login_path %>
               <% else %>
               <%= link_to current_user.name, user_path(current_user.id) %>
-              <%= link_to "Log out", logout_path %></a> 
-              <%= link_to pluralize(current_user.membership_requests.count, "pending request"),user_path(current_user.id)  %>   
-              
+              <%= link_to "Log out", logout_path %></a>
+              <%= link_to pluralize(current_user.membership_requests.count, "pending request"),user_path(current_user.id)  %>
+
             <% end %>
           </a>
         </li>
         <li>
             <a href="about.html">
-                
+
         </li>
       </ul>
     </div>
@@ -71,9 +71,12 @@
                     <a href="#">Myers Briggs types</a>
                 </li>
                 <li>
-                    <a href="#">My profile</a>
+                    <%= link_to "My Profile", user_path(current_user.id) %>
                 </li>
-                
+                <li>
+                    <a href><%= link_to "Myers Briggs Test", new_score_path %></a>
+                </li>
+
             </ul>
         </div>
         </div>
