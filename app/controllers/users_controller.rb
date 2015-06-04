@@ -22,6 +22,9 @@ class UsersController < ApplicationController
     @projects = Project.where(user_id: @user.id)
   end
 
+  def notification
+    @user = current_user
+  end
 
 private
   def user_params
