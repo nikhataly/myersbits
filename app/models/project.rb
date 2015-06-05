@@ -18,9 +18,10 @@ class Project < ActiveRecord::Base
   end
 
 
-  #  def is_participant?
-  #   self.memberships.user_id != current_user.user_id
-  # end
+  def is_participant?
+    (self.memberships.id != current_user.id) || self.user = current_user
+  end
+
 
 
 end

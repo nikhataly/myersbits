@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+  class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_many :memberships
   has_many :membership_requests, through: :founded_projects, source: :memberships
