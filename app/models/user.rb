@@ -31,6 +31,10 @@
     project.memberships.include? self
   end
 
+  # def is_participant?(project)
+  #   project.memberships.include?(self) || project.user == self
+  # end
+
   mount_uploader :avatar, AvatarUploader
 
 end

@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
@@ -17,10 +17,6 @@ class Project < ActiveRecord::Base
 
   end
 
-
-  def is_participant?
-    (self.memberships.id != current_user.id) || self.user = current_user
-  end
 
 
 
