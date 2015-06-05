@@ -4,6 +4,8 @@
   <%= render @project %>
 </div>
 
+<div id="map-canvas" class="well" data-latitude="<%= @project.latitude.to_f %>" data-longitude="<%= @project.longitude.to_f%>"></div>
+
 <div class="well">
 <% if @nearby_projects.any? %>
   <h3><em>Nearby projects</em></h3>
@@ -14,3 +16,5 @@
 </ul>
   <% end %>
   </div>
+
+

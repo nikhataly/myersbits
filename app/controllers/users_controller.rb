@@ -20,6 +20,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @projects = Project.where(user_id: @user.id)
+    # if params[:longitude] && params[:latitude]
+    #   @projects
+  
+    #   respond_to do |format|
+    #     format.html
+    #     format.js
+
   end
 
   def notification

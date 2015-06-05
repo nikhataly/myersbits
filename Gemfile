@@ -46,6 +46,11 @@ gem 'will_paginate-bootstrap'
 
 gem 'sorcery'
 gem 'frozen_record'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'remotipart' 
+gem 'geocoder'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,11 +62,9 @@ group :development, :test do
   gem 'did_you_mean'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'carrierwave'
-  gem 'mini_magick'
-  gem 'remotipart'
-  gem 'geocoder'
-
+ 
+ 
+  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
