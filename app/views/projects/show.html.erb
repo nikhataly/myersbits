@@ -3,3 +3,14 @@
 <div id="project">
   <%= render @project %>
 </div>
+
+<div class="well">
+<% if @nearby_projects.any? %>
+  <h3><em>Nearby projects</em></h3>
+  <ul>
+  <% @nearby_projects.each do |np| %>
+    <li> <%= "#{np.title }, #{np.distance} km "%> </li>
+  <% end %>
+</ul>
+  <% end %>
+  </div>

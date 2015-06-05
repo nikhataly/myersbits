@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @founder = @project.user #User.where(id:founder_id)
+    @nearby_projects = @project.nearbys(1, units: :km)
   end
 
   def new
@@ -23,7 +24,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-      if project.save
+      if @project.save
         redirect_to projects_url
       else render :new
     end
@@ -53,7 +54,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :start_date, :end_date, :location)
+    params.require(:project).permit(:title, :description, :start_date, :end_date, :location, :address, :skills_required, :participants)
   end
 
 end

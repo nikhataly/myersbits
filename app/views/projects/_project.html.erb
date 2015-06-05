@@ -2,7 +2,7 @@
   <h2> Project: <%= link_to project.title, project_path(project.id) %></h2>
     <p><em>Description: <%= project.description %><br>
     Start Date: <%= project.start_date %> <br>
-    Location: <%= link_to project.location, map_path %> <br>
+    Location: <%= project.location %> <br>
     Founder: <%= project.user.name %> <br>
     Number of Participants: <%= project.participants %><br>
     Number of empty slots: <%= project.participants - project.memberships.accepted.count%> <br>

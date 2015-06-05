@@ -32,8 +32,22 @@
   </div>
     <div class="field">
     <%= f.label :location %> <br/>
-    <%= f.number_field :location %>
+    <%= f.text_field :location %>
   </div>
-
+   <div class="field">
+    <%= f.label :participants %> <br/>
+    <%= f.number_field :participants %>
+  </div>
+   <div class="field">
+    <%= f.label :skills_required %> <br/>
+    <%= f.text_field :skills_required %>
+  </div>
+ <div class="field">
+    <%= f.label :address %> <br/>
+    <%= f.text_field :address %>
+  </div>
+ <div class="action">
+    <%= f.submit %>
+  </div>    
 <% end %>
 
