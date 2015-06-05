@@ -1,15 +1,20 @@
 
+<h1><%= @user.name %></h1>
+
+<div class="avatar">
+  <%= image_tag @user.avatar.url(:medium) %>
+</div>
+
+
 <p>
  <strong>My MBTI:</strong>
 
-  <%= @user.personality.mbti %>
-
+ 
  </p>
 
 <p>
  <strong>My profile:</strong>
 
-  <%= @user.personality.title %>
 
  </p>
 

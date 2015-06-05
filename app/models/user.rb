@@ -5,13 +5,6 @@ class User < ActiveRecord::Base
   has_many :joined_projects, class_name: "Project", through: :memberships, source: :project
   has_many :founded_projects, class_name: "Project"
 
-  def my_pending_requests
-    self.memberships.where(approved: false)
-  end
-
-  def my_approved_requests
-    self.memberships.where(approved: true)
-  end
 
   belongs_to :personality
   has_many :relationships, through: :personality
@@ -22,6 +15,13 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
 
+  def my_pending_requests
+    self.memberships.where(approved: false)
+  end
+
+  def my_approved_requests
+    self.memberships.where(approved: true)
+  end
 
   def is_founder?(project)
     project.user == self
@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
   def is_member?(project)
     project.memberships.include? self
   end
+
+  mount_uploader :avatar, AvatarUploader
 
 end
 # team.each do |team_member|

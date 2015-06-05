@@ -26,4 +26,14 @@
     </div>
     <%= f.submit "Register", class: 'btn btn-primary btn-lg' %>
 
+  <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>  
 <% end %>
+
+
+<!-- <form action="/users" method="POST" enctype="multipart/form-data">
+  <input type="file" name="avatar" id="avatar">
+  <input type="submit">
+</form> -->
