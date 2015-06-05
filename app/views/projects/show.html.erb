@@ -6,6 +6,6 @@ nb<div id="project">
 
 
 
- <%  if @project.is_participant? %>
+ <%  if current_user.is_participant?(@project) %>
    <%=  puts 'aaaaaaaa' %>
-  <%  end %>
+<%  end %>
