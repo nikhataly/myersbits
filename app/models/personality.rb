@@ -8,3 +8,4 @@ class Personality < ActiveRecord::Base
     find_by(mbti: mbti.to_s.upcase)
   end
 end
+

@@ -1,10 +1,9 @@
-  class User < ActiveRecord::Base
+class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_many :memberships
   has_many :membership_requests, through: :founded_projects, source: :memberships
   has_many :joined_projects, class_name: "Project", through: :memberships, source: :project
   has_many :founded_projects, class_name: "Project"
-
 
   belongs_to :personality
   has_many :relationships, through: :personality
@@ -16,11 +15,11 @@
   validates_uniqueness_of :email
 
   def my_pending_requests
-    self.memberships.where(approved: false)
+    memberships.where(approved: false)
   end
 
   def my_approved_requests
-    self.memberships.where(approved: true)
+    memberships.where(approved: true)
   end
 
   def is_founder?(project)
@@ -28,18 +27,29 @@
   end
 
   def is_member?(project)
-    project.memberships.include? self
+    memberships.where(project: project).any?
+    # project.memberships.where(user: self).any?
   end
 
-  # def is_participant?(project)
-  #   project.memberships.include?(self) || project.user == self
-  # end
+  def is_approved_member?(project)
+    project.memberships.where(approved: true, user: self).any?
+  end
+
+  def is_participant?(project)
+    is_founder?(project) || is_approved_member?(project)
+  end
+
+# team.each do |team_member|
+#   current_user.relationships.where(secondary: team_member.personality).first.compatibility
+# end
+
+  def inspect
+    "#<User: #{name} (#{email}) => #{personality.mbti}>"
+  end
+
 
   mount_uploader :avatar, AvatarUploader
 
 end
-# team.each do |team_member|
-#   current_user.relationships.where(secondary: team_member.personality).first.compatibility
-# end
 
 

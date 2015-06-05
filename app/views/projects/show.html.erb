@@ -20,4 +20,8 @@
 
 
 
-
+<% if current_user.is_participant?(@project) %>
+  <p> i'm a participant </p>
+<% else %>
+<p>"not a participant"</p>
+  <% end %>
