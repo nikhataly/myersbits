@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
   has_many :memberships
-  has_many :members, through: :memberships, source: :member
+  has_many :members, through: :memberships, source: :user
 
   validates :title, :description, presence: true
   validate :start_date_cannot_be_in_the_past
@@ -14,10 +14,28 @@ class Project < ActiveRecord::Base
     if start_date.present? && start_date < Date.today
       errors.add(:start_date, "can't be in the past")
     end
-
   end
 
 
+  def approved_members
+    memberships.includes(:user).where(approved: true).map(&:user)
+    # memberships.where(approved: true).map(&:user)
+  end
+
+  def all_members
+    approved_members + [user]
+  end
+
+  def other_members(current_user)
+    all_members - [current_user]
+  end
+
+  def team_compatability_for(current_user)
+    other_members(current_user).map do |other|
+      [other, Relationship.find_by(primary: current_user.personality, secondary: other.personality)]
+    end.to_h
+    # Relationship.where(primary: current_user, secondary: other_members.map(&:personality))
+  end
 
 
 end

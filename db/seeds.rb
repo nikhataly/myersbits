@@ -141,15 +141,15 @@ end
 
 
 
-architect = Personality.find_by_mbti("INTP")
-mastermind = Personality.find_by_mbti("INTJ")
-champion = Personality.find_by_mbti("ENFP")
+architect = Personality[:intp]
+mastermind = Personality[:intj]
+champion = Personality[:enfp]
 
-user1 = User.create(email: "me@me.com", password: 'abcd', personality_id: architect.id, name: "Minime")
-user2 = User.create(email: "sabina@gmail.com", password: 'abcd', personality_id: mastermind.id, name: "Sabina")
-user3 = User.create(email: "erin@hotmail.com", password: 'abcd', personality_id: champion.id, name: "Erin")
-user4 = User.create(email: "nikhat@yahoo.com", password: 'abcd', personality_id: architect.id, name: "Nikhat")
-user5 = User.create(email: "frank@google.com", password: 'abcd', personality_id: champion.id, name: "Frank")
+user1 = User.create(email: "me@me.com", password: 'abcd', personality: architect, name: "Minime")
+user2 = User.create(email: "sabina@gmail.com", password: 'abcd', personality: mastermind, name: "Sabina")
+user3 = User.create(email: "erin@hotmail.com", password: 'abcd', personality: champion, name: "Erin")
+user4 = User.create(email: "nikhat@yahoo.com", password: 'abcd', personality: architect, name: "Nikhat")
+user5 = User.create(email: "frank@google.com", password: 'abcd', personality: champion, name: "Frank")
 
 Project.create(title: "Crowdfunder Practice Session", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 5, user_id: user1.id, address: "220 King St W, Suite 200
 Toronto, Ontario M5H 1K4", skills_required: "Ruby on Rails, JavaScript, HTML, CSS")
@@ -320,27 +320,14 @@ print "done"
 # }.each do |compat, descr|
 #   Compat.create
 
-["Kindred", "Inspiring", "Complementing", "Challenging"].each do |n|
-    Compatibility.create(title: n, )
+{
+  "Kindred" => "People of the this personality type are more likely than most to share the your values, problem-solving style, and general approach to work. They won't necessarily agree on everything, and there's no guarantee they'll always get along, but they're more likely to feel an easy rapport and have generally take a similar perspective on important issues.",
+  "Inspiring" => "People of the this personality type are likely to strike you as similar in character, but with some key differences which may make them especially inspiring to work with. You may find that working with people of this type offers unique opportunities for growth. Work relationships between you and this type should have a good balance of commonalities and opportunities to share and benefit from fresh skills and perspectives.",
+  "Complementing" => "You may not feel an immediate rapport with people of this type, but once you get to know each other, you'll likely find you have some important things in common, as well as some things to teach one other. Although people of this type may not initially strike you as the most desirable coworkers, their relationships present a lot of potential to complement and learn from one other.",
+  "Challenging" => "People of the following type present the most potential for personality clash and conflict with your personality type, but also the best opportunities for growth. Because people of these types have fundamentally different values and motivations from your's, initially, it may seem impossible to relate. But because they are so different, their strengths are the your weaknesses, and if you are able to develop a healthy working relationship, you can learn a tremendous amount from each other.",
+}.each do |title, desc|
+    Compatibility.create(title: title, description: desc)
 end
-
-kindred = Compatibility.find_by_title("Kindred")
-kindred.description = "People of the this personality type are more likely than most to share the your values, problem-solving style, and general approach to work. They won't necessarily agree on everything, and there's no guarantee they'll always get along, but they're more likely to feel an easy rapport and have generally take a similar perspective on important issues."
-kindred.save
-
-
-inspiring = Compatibility.find_by_title("Inspiring")
-inspiring.description = "People of the this personality type are likely to strike you as similar in character, but with some key differences which may make them especially inspiring to work with. You may find that working with people of this type offers unique opportunities for growth. Work relationships between you and this type should have a good balance of commonalities and opportunities to share and benefit from fresh skills and perspectives."
-inspiring.save
-
-complementing = Compatibility.find_by_title("Complementing")
-complementing.description = "You may not feel an immediate rapport with people of this type, but once you get to know each other, you'll likely find you have some important things in common, as well as some things to teach one other. Although people of this type may not initially strike you as the most desirable coworkers, their relationships present a lot of potential to complement and learn from one other."
-complementing.save
-
-challenging = Compatibility.find_by_title("Challenging")
-challenging.description = "People of the following type present the most potential for personality clash and conflict with your personality type, but also the best opportunities for growth. Because people of these types have fundamentally different values and motivations from your's, initially, it may seem impossible to relate. But because they are so different, their strengths are the your weaknesses, and if you are able to develop a healthy working relationship, you can learn a tremendous amount from each other."
-challenging.save
-
 
 relationships = {
   isfp: {
@@ -456,13 +443,23 @@ relationships = {
  }
 }
 
-relationships.each do |primary_str, hash|
-  primary = Personality.find_by_mbti(primary_str.upcase)
-  hash.each do |compatibility_str, array|
-    compatibility = Compatibility.find_by_title(compatibility_str.to_s.capitalize)
-    array.each do |secondary_str|
-      secondary = Personality.find_by_mbti(secondary_str.upcase)
+relationships.each do |primary_mbti, hash|
+  primary = Personality[primary_mbti]
+  hash.each do |title, secondary_mbtis|
+    compatibility = Compatibility.find_by(title: title.to_s.capitalize)
+    secondary_mbtis.each do |secondary_mbti|
+      secondary = Personality[secondary_mbti]
       Relationship.create(primary: primary, compatibility: compatibility, secondary: secondary)
     end
   end
 end
+
+
+users = User.all
+project = Project.create(user: users[0], title: "asdf", description: "Asdfasdf", start_date: Time.now, address: "57 What St, Toronto")
+users[1..-1].each { |u| project.memberships.create(user: u, approved: true) }
+
+
+
+
+
