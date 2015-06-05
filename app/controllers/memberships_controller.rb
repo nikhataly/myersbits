@@ -17,8 +17,8 @@ before_filter :is_founder?
   end
 
   def create
-    @project=Project.find(params[:project_id])
-    @membership = Membership.where(:user_id => current_user.id)
+    @project = Project.find(params[:project_id])
+    @membership = @project.memberships.where(:user_id => current_user.id)
       if @membership.any?
         redirect_to project_url(@project), :notice => "The founder of this project has already been notified of your participation request!"
       else
