@@ -67,6 +67,7 @@
   </div>
 
       <div id="wrapper">
+
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -103,7 +104,6 @@
                 </li>
             </ul>
         </div>
-        </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -130,7 +130,11 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
     </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
 
     <% if flash[:notice] %>
      <div class="alert"><%= flash[:notice] %></div>
