@@ -5,10 +5,18 @@
     Location: <%= project.location %> <br>
     Founder: <%= project.user.name %> <br>
     Number of Participants: <%= project.participants %><br>
-    Number of empty slots: <%= project.participants - project.memberships.accepted.count%> <br>
+    Number of empty slots: <%= project.memberships.count - project.memberships.accepted.count%> <br>
     Skills required: <%= project.skills_required %></em></p>
 
     <% unless current_user.is_member?(project) or current_user.is_founder?(project) %>
       <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%>
+
+     <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+              <%= value %>
+        </div>
+  <% end %>
     <% end %>
 </div>
+
+
