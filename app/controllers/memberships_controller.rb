@@ -26,7 +26,8 @@ before_filter :is_founder?
         @membership.user_id = current_user.id
         @membership.project_id = params[:project_id]
         if @membership.save
-          redirect_to project_url(@project), :notice => "Project founder has been notified of your participation request!"
+          flash[:success] = "Your join request was sent to the project founder!"
+          redirect_to project_url(@project)
         else
           flash[:notice] = "Project participation request didn't go through, please try again!" + @membership.errors.full_messages.join(',')
           render "/projects/show"
