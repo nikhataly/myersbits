@@ -11,7 +11,8 @@
     <% if current_user && (current_user.is_member?(project) == false or current_user.is_founder?(project) == false) %>
       <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%>
     <% end %>
-
 </div>
+
+
 
 
