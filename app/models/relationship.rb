@@ -8,7 +8,7 @@ class Relationship < ActiveRecord::Base
   # end
 
   def display
-     "#{primary.mbti} is #{compatibility.title} to #{secondary.mbti}"
+     "#{secondary.mbti} is #{compatibility.title} to #{primary.mbti}"
   end
 
 end

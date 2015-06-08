@@ -13,19 +13,8 @@
 </div>
 
 
+<%= render 'map' %>
 
-<div id="map-canvas" class="well" data-latitude="<%= @project.latitude.to_f %>" data-longitude="<%= @project.longitude.to_f%>"></div>
-
-<div class="well">
-<% if @nearby_projects.any? %>
-  <h3><em>Nearby projects</em></h3>
-  <ul>
-  <% @nearby_projects.each do |np| %>
-    <li> <%= "#{np.title }, #{np.distance} km "%> </li>
-  <% end %>
-</ul>
-  <% end %>
-  </div>
 
 
 <% if current_user.is_participant?(@project) %>
