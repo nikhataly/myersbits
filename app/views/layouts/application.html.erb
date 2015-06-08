@@ -42,7 +42,8 @@
                   <ul class="nav navbar-nav navbar-right">
                   <li><%= link_to_unless_current('Profile', user_path(current_user.id)) {  link_to('Profile', user_path(current_user.id), class: 'active' ) } %></li>
                   </ul>
-                  <p class="navbar-text navbar-right"><%= link_to pluralize(current_user.membership_requests.count, "pending request"),notification_path(current_user.id)  %></p>
+                  <p class="navbar-text navbar-right"> <%= link_to pluralize(current_user.count_pending_membership_requests, "pending requests"),notification_path(current_user.id)  %></p>
+                 
                     <p class="navbar-text navbar-right">Signed in as <%= current_user.name %> <%= link_to "Log out", session_path("current"), :method => :delete %></p>
                   <% else %>
                     <%= form_tag "/sessions", method: "POST", class: "navbar-form navbar-right" do |f| %>

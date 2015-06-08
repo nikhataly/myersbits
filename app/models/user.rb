@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
   end
 
 
+  def count_pending_membership_requests
+    (membership_requests.where(approved: false)).count
+  end
+
   mount_uploader :avatar, AvatarUploader
 
 end
