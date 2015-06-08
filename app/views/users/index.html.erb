@@ -1,0 +1,12 @@
+<h1>myersBits Members</h1>
+
+<% @users.each do |user| %>
+
+<div class="well">
+  <p> Name: <%= user.name %> </p>
+  <p> Personality: <%= user.personality.mbti %>, <%= user.personality.title %>
+  <%= link_to image_tag(user.personality.avatar), personality_path(user.personality.id) %>
+
+</div>
+<% end %>
+

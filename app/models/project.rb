@@ -20,7 +20,7 @@ class Project < ActiveRecord::Base
   def approved_members
     #memberships.includes(:user).where(approved: true)
 
-    members.joins(:memberships).where("memberships.project_id = ?", self.id)
+    members.joins(:memberships).where(memberships: {project_id: self.id}).distinct
     # memberships.where(approved: true).map(&:user)
   end
 
