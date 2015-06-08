@@ -1,10 +1,11 @@
-<h1>Scores#new</h1>
-<p>Find me in app/views/scores/new.html.erb</p>
+<h1>Myers Briggs Personality Test</h1> <br>
+
+<p> For each of the following scales choose a placement that best describes you</p><br>
 
 <%= form_for @score do |f| %>
-  
+
   <% Score.questions.each_with_index do |q, index| %>
-    <%= q[0] %>
+    <%= q[0] + "  " %>
     <% (1..5).each do |n| %>
       <% if n == 3 %>
         <%= radio_button_tag("answers[#{index}]", n, checked: true) %>
@@ -15,5 +16,5 @@
     <%= q[1] %>
     <hr>
   <%end%>
-  <%= f.submit %>
+  <%= submit_tag "Submit" %>
 <% end %>
