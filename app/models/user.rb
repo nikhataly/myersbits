@@ -43,9 +43,9 @@ class User < ActiveRecord::Base
 #   current_user.relationships.where(secondary: team_member.personality).first.compatibility
 # end
 
-  def inspect
-    "#<User: #{name} (#{email}) => #{personality.mbti}>"
-  end
+  # def inspect
+  #   "#<User: #{name} (#{email}) => #{personality.mbti}>"
+  # end
 
 
   def count_pending_membership_requests

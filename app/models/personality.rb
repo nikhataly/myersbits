@@ -1,4 +1,6 @@
 class Personality < ActiveRecord::Base
+
+
   has_many :users
   has_many :recommendations
   has_many :relationships, foreign_key: :primary_id

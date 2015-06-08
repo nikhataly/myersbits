@@ -18,7 +18,9 @@ class Project < ActiveRecord::Base
 
 
   def approved_members
-    memberships.includes(:user).where(approved: true).map(&:user)
+    #memberships.includes(:user).where(approved: true)
+
+    members.joins(:memberships).where("memberships.project_id = ?", self.id)
     # memberships.where(approved: true).map(&:user)
   end
 
@@ -30,7 +32,7 @@ class Project < ActiveRecord::Base
     all_members - [current_user]
   end
 
-  def team_compatability_for(current_user)
+  def team_compatibility_for(current_user)
     h = other_members(current_user).map do |other|
       [other, Relationship.find_by(primary: current_user.personality, secondary: other.personality)]
     end.to_h

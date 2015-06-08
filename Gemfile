@@ -28,6 +28,8 @@ gem 'bootstrap-sass'
 
 gem 'ransack'
 
+gem 'faker'
+
 #font-awesome
 gem 'font-awesome-sass', '~> 4.3'
 
