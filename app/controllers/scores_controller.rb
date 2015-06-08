@@ -7,17 +7,32 @@ class ScoresController < ApplicationController
     @score = Score.new
   end
 
+  def page
+    page = params[:page_num]
+    page_size = 10
+  end
+
+  def submit_page
+    session[:answers] ||= {}
+    session[:answers] = session[:answers].merge(params[:answers])
+  end
+
   def create
-    answers = (params[:answers].values.unshift(0)).map{|ans| ans.to_i}
-    ie = Score.calculate_ie(answers)
-    sn = Score.calculate_sn(answers)
-    ft = Score.calculate_ft(answers)
-    jp = Score.calculate_jp(answers)
-    @score = Score.new(extraversion: ie, openness: sn, agreeableness: ft, conscientiousness: jp)
-    @score.user = current_user
-    current_user.personality = Personality.find_by_mbti(@score.mbti)
-    current_user.save
+    # answers = (params[:answers].values.unshift(0)).map{|ans| ans.to_i}
+    # answers = params[:answers]
+    @score = current_user.scores.new
+    @score.add_answers params[:answers]
+    @score.calculate_all
     @score.save
+
+    # ie(answers)
+    # sn = Score.calculate_sn(answers)
+    # ft = Score.calculate_ft(answers)
+    # jp = Score.calculate_jp(answers)
+    # @score = Score.new(extraversion: ie, openness: sn, agreeableness: ft, conscientiousness: jp)
+
+    current_user.personality = Personality[@score.mbti]
+    current_user.save
   end
 
   def destroy
