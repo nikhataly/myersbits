@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get :autocomplete_skill_name, :on => :collection
   end
 
+  resources :personalities
+
   resources :sessions, only: [:new,:create, :destroy]
 
   get "logout" => "sessions#destroy", :as => "logout"
