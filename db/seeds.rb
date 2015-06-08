@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+x# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -155,10 +155,10 @@ Project.create(title: "Crowdfunder Practice Session", description: "Come work wi
 Toronto, Ontario M5H 1K4", skills_required: "Ruby on Rails, JavaScript, HTML, CSS")
 Project.create(title: "SeatYourself project", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 5, user_id: user2.id, address: "250 University Avenue, Suite 400
 Toronto, ON M5H 3E5", skills_required: "Ruby on Rails, JavaScript, HTML, CSS")
-Project.create(title: "Codecademy Python Fundamentals", description: "Planning to go through the online Python course on Codecademy, looking for learning partners", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs",participants: 2, user_id: user3.id, address: "220 King St W, Suite 200
-Toronto, Ontario M5H 1K4",skills_required: "Basic object oriented programming skills (Python prefered)")
-Project.create(title: "Mars Rover challenge", description: "Working on Mars Rover challenge at Bitmaker Labs.", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 3, user_id: user4.id, address: "220 King St W, Suite 200
-Toronto, Ontario M5H 1K4",skills_required: "Ruby on Rails")
+Project.create(title: "Codecademy Python Fundamentals", description: "Planning to go through the online Python course on Codecademy, looking for learning partners", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs",participants: 2, user_id: user3.id, address: "20 Camden St, Suite 200
+Toronto, ON, Canada",skills_required: "Basic object oriented programming skills (Python prefered)")
+Project.create(title: "Mars Rover challenge", description: "Working on Mars Rover challenge at Bitmaker Labs.", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 3, user_id: user4.id, address: "425 Adelaide Street West, 3rd Floor
+Toronto, ON M5V 3C1",skills_required: "Ruby on Rails")
 Project.create(title: "Learn jQuery Fundamentals", description: "Planning to go through Codecademy online course and practice jQuery", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 4, user_id: user5.id, address: "220 King St W, Suite 200
 Toronto, Ontario M5H 1K4", skills_required: "Basic jQuery")
 Project.create(title: "Practice javascript frameworks", description: "Anybody interested in or familiar with recommended javascript frameworks?", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 2, user_id: user1.id, address: "220 King St W, Suite 200

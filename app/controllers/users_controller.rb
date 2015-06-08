@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  def index
+    @user=User.all
+    @search = User.search(params[:q])
+    @users = @search.result.order(:title).paginate(page: params[:page])
+  end
 
   def new
     @user = User.new
