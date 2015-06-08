@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'personalities/index'
+
+  get 'personalities/show'
+
   root 'projects#index'
   resources :scores
   resources(:projects) do
@@ -15,9 +19,9 @@ Rails.application.routes.draw do
     get :autocomplete_skill_name, :on => :collection
   end
 
-  resources :personalities
+  resources :personalities, only: [:index, :show]
 
-  resources :sessions, only: [:new,:create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"

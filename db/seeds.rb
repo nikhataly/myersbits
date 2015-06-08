@@ -27,7 +27,7 @@
 }
 
 b.each do |mbti, title|
-  Personality.create(mbti: mbti, title: title, avatar: "/assets/images/#{mbti}.png")
+  Personality.create(mbti: mbti, title: title)
 end
 
 

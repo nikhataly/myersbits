@@ -1,6 +1,4 @@
 class Personality < ActiveRecord::Base
-
-
   has_many :users
   has_many :recommendations
   has_many :relationships, foreign_key: :primary_id
@@ -8,6 +6,10 @@ class Personality < ActiveRecord::Base
 
   def self.[](mbti)
     find_by(mbti: mbti.to_s.upcase)
+  end
+
+  def avatar
+    "#{mbti}.png"
   end
 end
 
