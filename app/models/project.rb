@@ -31,7 +31,7 @@ class Project < ActiveRecord::Base
   end
 
   def team_compatability_for(current_user)
-    other_members(current_user).map do |other|
+    h = other_members(current_user).map do |other|
       [other, Relationship.find_by(primary: current_user.personality, secondary: other.personality)]
     end.to_h
     # Relationship.where(primary: current_user, secondary: other_members.map(&:personality))
