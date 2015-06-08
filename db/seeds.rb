@@ -5,8 +5,8 @@
 #
   # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
   # Mayor.create(name: 'Emanuel', city: cities.first)
-count = 0
- a = ["ISTJ.png", "ISFJ.png", "INFJ.png", "INTJ.png", "ISTP.png", "ISFP.png", "INFP.png", "INTP.png", "ESTP.png", "ESFP.png", "ENFP.png", "ENTP.png", "ESTJ.png", "ESFJ.png", "ENFJ.png", "ENTJ.png"]
+
+ 
  b = {
   "ISTJ" => "The Inspector",
   "ISFJ" => "The Protector",
@@ -26,10 +26,8 @@ count = 0
   "ENTJ" => "The Commander"
 }
 
-16.times do
-  Personality.create(mbti: b.keys[count], title: b.values[count], avatar: a[count])
-  count += 1
-  puts "|"
+b.each do |mbti, title|
+  Personality.create(mbti: mbti, title: title, avatar: "/assets/images/#{mbti}.png")
 end
 
 
