@@ -1,6 +1,20 @@
 <h1>Compatibilities</h1>
-<% @compatibilities.each do |comp| %>
-<p><strong><%= comp.title%></strong>
- <p><%= %></p>
-<br><%= comp.description %></p>
+
+<% if current_user %>
+  <h2>Your Personality Type</h2><br>
+  <%= link_to image_tag(current_user.personality.avatar), personality_path(current_user.personality.id) %>
 <% end %>
+
+<% @compatibilities.each do |comp| %>
+  <h2><strong><%= comp.title%></h2></strong>
+  <% if current_user %>
+    <% r = Relationship.where(compatibility: comp, primary: current_user.personality) %>
+      <% r.each do |relationship| %>
+        <%= link_to image_tag(relationship.secondary.avatar) %>
+      <% end %>
+  <% end %>
+
+  <br><%= comp.description %></p>
+<% end %>
+
+

@@ -30,7 +30,7 @@
       <center>
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav navbar-left">
-            
+
             <!-- List item 1 -->
             <li>
               <a href="#menu-toggle">
@@ -39,11 +39,11 @@
               <% end %>
               </a>
             </li>
-            
+
             <!-- List item 2 -->
             <li>
-              <%= link_to_unless_current('myersBits', projects_path) {  
-                link_to('myersBits', projects_path, class: 'active') 
+              <%= link_to_unless_current('myersBits', projects_path) {
+                link_to('myersBits', projects_path, class: 'active')
               } %>
             </li>
 
@@ -53,9 +53,9 @@
                 <%= link_to pluralize(current_user.count_pending_membership_requests, "pending requests"),notification_path(current_user.id)  %>
               </p>
               <p class="navbar-text navbar-right">
-                Signed in as 
-                <%= link_to_unless_current(current_user.name, user_path(current_user.id)) {  
-                  link_to(current_user.name, user_path(current_user.id), class: 'active' ) 
+                Signed in as
+                <%= link_to_unless_current(current_user.name, user_path(current_user.id)) {
+                  link_to(current_user.name, user_path(current_user.id), class: 'active' )
                 } %>
                 <%= link_to "Log out", session_path("current"), :method => :delete %>
               </p>
@@ -117,7 +117,7 @@
                     <a href><%= link_to "Members", users_path %></a>
                 </li>
                 <li>
-                    <a href><%= link_to "My compatibilities", compatibilities_path %></a>
+                    <a href><%= link_to "Compatibilities", compatibilities_path %></a>
                 </li>
             </ul>
         </div>

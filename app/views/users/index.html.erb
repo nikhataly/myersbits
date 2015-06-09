@@ -3,8 +3,11 @@
 <% @users.each do |user| %>
 <div class="well">
 
-  <p> Name: <%= user.name %> </p>
-
+  <center><h2> <%= user.name %> </h2></center>
+  <div class="avatar">
+     <center><%= image_tag user.avatar.url(:medium) %>
+    <%= link_to image_tag(user.personality.avatar), personality_path(user.personality.id) %></center>
+  </div>
   <% if !(current_user == user) %>
   <p> Personality type: <%= user.personality.mbti %><br>
   <p> My Personality type: <%= current_user.personality.mbti %></p>
@@ -22,13 +25,11 @@
 
 <h2> Working with <%= user.personality.mbti%> </h2>
   <h3> <%=  "#{user.personality.mbti} at work:"%> </h3> <p><%= user.personality.at_work %></p><br>
-  <h3> <%= "#{user.personality.mbti} in a team:"%> </h3> <%= user.personality.as_leader %></p><br>
-  <h3> <%= "#{user.personality.mbti} as a leader:"%> </h3><%= user.personality.as_team %></p><br>
+  <h3> <%= "#{user.personality.mbti} in a team:"%> </h3> <p><%= user.personality.as_leader %></p><br>
+  <h3> <%= "#{user.personality.mbti} as a leader:"%> </h3><p><%= user.personality.as_team %></p><br>
 
 
-  <div class="avatar">
-  <%= image_tag user.avatar.url(:medium) %> <%= link_to image_tag(user.personality.avatar), personality_path(user.personality.id) %>
-  </div>
+
 
 </div>
 <% end %>

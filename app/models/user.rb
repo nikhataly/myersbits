@@ -39,6 +39,8 @@ class User < ActiveRecord::Base
     is_founder?(project) || is_approved_member?(project)
   end
 
+
+
 # team.each do |team_member|
 #   current_user.relationships.where(secondary: team_member.personality).first.compatibility
 # end
