@@ -1,7 +1,7 @@
 <div class="well">
   <h2> Project: <%= link_to project.title, project_path(project.id) %></h2>
     <p><em>Description: <%= project.description %><br>
-    Start Date: <%= project.start_date %> <br>
+    Start Date: <%= project.start_date.to_date %> <br>
     Location: <%= project.location %> <br>
     Founder: <%= project.user.name %> <br>
     Number of Participants: <%= project.participants %><br>
