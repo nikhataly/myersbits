@@ -123,6 +123,14 @@ architect = Personality[:intp]
 mastermind = Personality[:intj]
 champion = Personality[:enfp]
 
+champion.description = ["Love to talk about what is going on in their lives", "Will encourage their mates to grow", "Need to feel encouragement", "Don't like to say it when their feelings are hurt", "Tend to withdraw to process hurt feelings in private", "Need to hear how much they mean to someone", "Like spontaneous demonstrations of love and respect", "Under stress: may have difficulty saying no and take on too many projects"]
+champion.save
+
+architect.description = ["Flexible and adaptable", "Want to make sense of concepts, and the world", "Logical and analytical- want others to be logical", "May have great powers of concentration", "Like abstract and symbolic thinking", "Often non-traditional", "May be seen as aloof; out of touch with the world", "Under stress: may feel overwhelmed and misunderstood"]
+architect.save
+
+mastermind.description = ["Have assumptions about the way things could be (strong opinions)", "Need to be around other competent people", "Avoid interpersonal conflict, but love a spirited debate", "Can need to feel in control, and be inflexible", "Can appear to be challenging and insensitive (generally not true underneath)", "Tend to avoid emotional risks, tend to keep thoughts and insights to themselves", "They may appear stubborn", "Under stress: may become over-structured; paralyzed by seeking perfection before taking action"]
+mastermind.save
 
 [
   [{email: "me@me.com", password: 'abcd', personality: architect, name: "Minime"}, "einstein.jpeg"],
@@ -140,14 +148,7 @@ champion = Personality[:enfp]
   end
 end
 
-champion.description = ["Love to talk about what is going on in their lives", "Will encourage their mates to grow", "Need to feel encouragement", "Don't like to say it when their feelings are hurt", "Tend to withdraw to process hurt feelings in private", "Need to hear how much they mean to someone", "Like spontaneous demonstrations of love and respect", "Under stress: may have difficulty saying no and take on too many projects"]
-champion.save
 
-architect.description = ["Flexible and adaptable", "Want to make sense of concepts, and the world", "Logical and analytical- want others to be logical", "May have great powers of concentration", "Like abstract and symbolic thinking", "Often non-traditional", "May be seen as aloof; out of touch with the world", "Under stress: may feel overwhelmed and misunderstood"]
-architect.save
-
-mastermind.description = ["Have assumptions about the way things could be (strong opinions)", "Need to be around other competent people", "Avoid interpersonal conflict, but love a spirited debate", "Can need to feel in control, and be inflexible", "Can appear to be challenging and insensitive (generally not true underneath)", "Tend to avoid emotional risks, tend to keep thoughts and insights to themselves", "They may appear stubborn", "Under stress: may become over-structured; paralyzed by seeking perfection before taking action"]
-mastermind.save
 
 
 
