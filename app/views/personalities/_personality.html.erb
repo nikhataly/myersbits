@@ -1,2 +1,15 @@
 
-<%= link_to image_tag(personality.avatar), personality_path(personality.id) %>
+<h2>Fun Facts about <%= @personality.mbti%>s</h2>
+
+<ul>
+<% @personality.description.split(",").each do |traits| %>
+<%= traits %>
+<% end %>
+</ul>
+
+
+<%# end %>
+
+<h2> Working Style </h2>
+<%= @personality.at_work %>
+

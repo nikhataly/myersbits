@@ -1,4 +1,8 @@
 <h1>Personality types</h1>
 
 
-<%= render @personalities %>
+<% @personalities.each do |personality| %>
+
+<%= link_to image_tag(personality.avatar), personality_path(personality.id) %>
+
+<% end %>
