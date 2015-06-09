@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
   def index
-    @user=User.all
     @search = User.search(params[:q])
     @users = @search.result.order(:title).paginate(page: params[:page])
+    @users = User.all
   end
 
   def new
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @projects = Project.where(user_id: @user.id)
     # if params[:longitude] && params[:latitude]
     #   @projects
-  
+
     #   respond_to do |format|
     #     format.html
     #     format.js

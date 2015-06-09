@@ -43,7 +43,7 @@
                   <li><%= link_to_unless_current('Profile', user_path(current_user.id)) {  link_to('Profile', user_path(current_user.id), class: 'active' ) } %></li>
                   </ul>
                   <p class="navbar-text navbar-right"> <%= link_to pluralize(current_user.count_pending_membership_requests, "pending requests"),notification_path(current_user.id)  %></p>
-                 
+
                     <p class="navbar-text navbar-right">Signed in as <%= current_user.name %> <%= link_to "Log out", session_path("current"), :method => :delete %></p>
                   <% else %>
                     <%= form_tag "/sessions", method: "POST", class: "navbar-form navbar-right" do |f| %>
@@ -102,6 +102,12 @@
                 </li>
                 <li>
                     <a href><%= link_to "New Project", new_project_path %></a>
+                </li>
+                <li>
+                    <a href><%= link_to "Members", users_path %></a>
+                </li>
+                <li>
+                    <a href><%= link_to "My compatibilities", users_path %></a>
                 </li>
             </ul>
         </div>

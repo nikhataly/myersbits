@@ -10,7 +10,7 @@
 <p>
  <strong>My MBTI: <%= @user.personality.mbti %></strong>
 
- 
+
  </p>
 
 <p>
@@ -21,7 +21,7 @@
 
 
 <section>
-    <button id="current-location"> Find projects near me</button>  
+    <button id="current-location"> Find projects near me</button>
 
 </section>
 
@@ -29,12 +29,12 @@
   <%= form_tag projects_path, method: :get do %>
   <%= label_tag :search, "Find projects nearby" %>
   <%= search_field_tag :search, params[:search] %>
-  <%= submit_tag "Search" %> 
+  <%= submit_tag "Search" %>
   <% end %>
 </section>
 
 <section>
 <h3>My Projects</h3>
-  <%= render @projects %> 
+  <%= render @projects %>
 </section>
 </div>

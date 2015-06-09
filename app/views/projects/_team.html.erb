@@ -1,3 +1,10 @@
 <div class="well">
-    <%= @project.team_compatibility_for(current_user).inspect %>
+    <%@res =  @project.team_compatibility_for(current_user) %>
+    <% # binding.pry %>
+    <%@res.each do |key, value|%>
+      <%= key.name %>, <%= value.display %>
+    <% end %>
 </div>
+
+<%# res = p.team_compatibility_for(User.first) %>
+<%# @res.first[1] %>
