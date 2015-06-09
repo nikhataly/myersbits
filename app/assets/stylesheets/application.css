@@ -221,4 +221,7 @@ min-width: 1045px;
 width:100%;
 transform: scale(1.5);
 -webkit-transform: scale(1.5);
+margin-left: 250px;
+margin-top: 200px;
+opacity: 0.3;
 }

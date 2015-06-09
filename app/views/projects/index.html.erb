@@ -1,26 +1,18 @@
-
 <div class="well">
-<h1>Projects</h1>
-
-
-<%= search_form_for @search do |s| %>
-
-
-  <%= s.text_field :title_or_description_or_user_name_or_location_or_skills_required_cont %>
-
-
-  <%= s.submit "Search"%>
-  </div>
-<% end %>
+  <h1>Projects</h1>
+  <%= search_form_for @search do |s| %>
+    <%= s.text_field :title_or_description_or_user_name_or_location_or_skills_required_cont %>
+    <%= s.submit "Search"%>
+  <% end %>
+</div>
 <br>
 <div class='container'>
-
+  <%= link_to 'Create Project', new_project_path %>
+<br>
   <%= render @projects %>
-
 </div>
 
 <%= will_paginate @projects, renderer: BootstrapPagination::Rails %>
 
-<%= link_to 'Create Project', new_project_path %>
 
 

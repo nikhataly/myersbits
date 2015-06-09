@@ -1,12 +1,34 @@
-<h1>myersBits Members</h1>
+<h1>Members</h1>
 
 <% @users.each do |user| %>
 
 <div class="well">
   <p> Name: <%= user.name %> </p>
-  <p> Personality: <%= user.personality.mbti %>, <%= user.personality.title %>
-  <%= link_to image_tag(user.personality.avatar), personality_path(user.personality.id) %>
+  <p> Personality: <%= user.personality.mbti %><br>
+   <%= current_user.where.personality_id = user.relationship.primary_id %><br>
+   <= user.relationship.compatibility.title %>
+   <% user.relationship.compatibility.description %>
+
+
+<h2>Working with <%user.personality.mbti%>'s</h2>
+  <%=  "#{user.personality.mbti} at work:"%> <% user.personality.at_work %>
+  <%= "#{user.personality.mbti} in a team:"%> <% user.personality.as_leader %>
+  <%= "#{user.personality.mbti} as a leader:"%> <% user.personality.as_team %>
+
+<h2> As a Leader </h2>
+<%= @personality.as_leader %>
+
+<h2> As a Team Member </h2>
+<%= @personality.as_team %>
+  <div class="avatar">
+  <%= image_tag user.avatar.url(:medium) %> <%= link_to image_tag(user.personality.avatar), personality_path(user.personality.id) %>
+  </div>
 
 </div>
 <% end %>
 
+user              personality  relationship                                       compatibility         Membershi
+personality_id    mbti         compatibility id, primary id, secondary id         id, title(to display) 
+
+
+team_compatibility_for(current_user)
