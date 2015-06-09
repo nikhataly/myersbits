@@ -1,9 +1,8 @@
 <%
 groups = {
   :founded_projects => "Founded projects",
-  :my_pending_requests => "Pending projects",
-  :my_approved_requests => "Joined projects"
-}
+  :joined_projects => "Joined projects"
+  }
 %>
 
 
@@ -16,9 +15,6 @@ groups = {
   <% end %>
 <% end %>
 
-
-
-<% projects = current_user.joined_projects %>
 <div class="well">
 <% current_user.founded_projects.each do |fp| %>
   <%= fp.title %>

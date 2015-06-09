@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
     project.user == self
   end
 
+
   def is_member?(project)
     memberships.where(project: project).any?
     # project.memberships.where(user: self).any?
