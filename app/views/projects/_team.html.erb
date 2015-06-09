@@ -1,8 +1,15 @@
 <div class="well">
+    <p>Your Personality type: <%= current_user.personality.mbti %></p><br>
+    <p>Other Members: </p>
+    <%@project.other_members(current_user).each do |member| %>
+    <%= member.name %>, <%= member.personality.mbti %> <br>
+    <% end %>
     <%@res =  @project.team_compatibility_for(current_user) %>
     <% # binding.pry %>
+    <br>
+    <p>Your Compatibilities: </p>
     <%@res.each do |key, value|%>
-      <%= key.name %>, <%= value.display %>
+      <%= key.name %>, <%= value.display %> <br>
     <% end %>
 </div>
 
