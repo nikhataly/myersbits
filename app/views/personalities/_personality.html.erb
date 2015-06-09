@@ -2,7 +2,7 @@
 <h2>Fun Facts about <%= @personality.mbti%>s</h2>
 
 <ul>
-<% @personality.description.split(",").each do |traits| %>
+<% @personality.description.split(" ").each do |traits| %>
 <%= traits %>
 <% end %>
 </ul>
