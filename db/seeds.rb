@@ -35,36 +35,6 @@ end
 
 
 
-ENFP=[
-"Love to talk about what is going on in their lives",
-"Will encourage their mates to grow",
-"Need to feel encouragement",
-"Don't like to say it when their feelings are hurt",
-"Tend to withdraw to process hurt feelings in private",
-"Need to hear how much they mean to someone",
-"Like spontaneous demonstrations of love and respect",
-"Under stress: may have difficulty saying no and take on too many projects"
-]
-
-INTP =[
-"Flexible and adaptable",
-"Want to make sense of concepts, and the world",
-"Logical and analytical- want others to be logical",
-"May have great powers of concentration",
-"Like abstract and symbolic thinking",
-"Often non-traditional",
-"May be seen as aloof; out of touch with the world",
-"Under stress: may feel overwhelmed and misunderstood"]
-
-INTJ=[
-"Have assumptions about the way things could be (strong opinions)",
-"Need to be around other competent people",
-"Avoid interpersonal conflict, but love a spirited debate",
-"Can need to feel in control, and be inflexible",
-"Can appear to be challenging and insensitive (generally not true underneath)",
-"Tend to avoid emotional risks, tend to keep thoughts and insights to themselves",
-"They may appear stubborn",
-"Under stress: may become over-structured; paralyzed by seeking perfection before taking action"]
 
 working_styles = {
   intp: {at_work:
@@ -153,6 +123,7 @@ architect = Personality[:intp]
 mastermind = Personality[:intj]
 champion = Personality[:enfp]
 
+
 [
   [{email: "me@me.com", password: 'abcd', personality: architect, name: "Minime"}, "einstein.jpeg"],
   [{email: "sabina@gmail.com", password: 'abcd', personality: mastermind, name: "Sabina"}, "githubphoto.jpg"],
@@ -163,11 +134,22 @@ champion = Personality[:enfp]
   user = User.create(params)
   user.avatar.store!(open("app/assets/images/#{avatar_file}"))
   user.save!
-  
+
   define_method "user#{n+1}" do
     user
   end
 end
+
+champion.description = ["Love to talk about what is going on in their lives", "Will encourage their mates to grow", "Need to feel encouragement", "Don't like to say it when their feelings are hurt", "Tend to withdraw to process hurt feelings in private", "Need to hear how much they mean to someone", "Like spontaneous demonstrations of love and respect", "Under stress: may have difficulty saying no and take on too many projects"]
+champion.save
+
+architect.description = ["Flexible and adaptable", "Want to make sense of concepts, and the world", "Logical and analytical- want others to be logical", "May have great powers of concentration", "Like abstract and symbolic thinking", "Often non-traditional", "May be seen as aloof; out of touch with the world", "Under stress: may feel overwhelmed and misunderstood"]
+architect.save
+
+mastermind.description = ["Have assumptions about the way things could be (strong opinions)", "Need to be around other competent people", "Avoid interpersonal conflict, but love a spirited debate", "Can need to feel in control, and be inflexible", "Can appear to be challenging and insensitive (generally not true underneath)", "Tend to avoid emotional risks, tend to keep thoughts and insights to themselves", "They may appear stubborn", "Under stress: may become over-structured; paralyzed by seeking perfection before taking action"]
+mastermind.save
+
+
 
   project1 = Project.create(title: "Crowdfunder Practice Session", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 5, user_id: user1.id, address: "220 King St W, Suite 200
 Toronto, Ontario M5H 1K4", skills_required: "Ruby on Rails, JavaScript, HTML, CSS")
