@@ -18,3 +18,7 @@ class Personality < ActiveRecord::Base
   end
 end
 
+
+
+
+

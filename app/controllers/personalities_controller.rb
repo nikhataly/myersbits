@@ -5,6 +5,6 @@ class PersonalitiesController < ApplicationController
 
   
   def show
-    @personality = Personality.find(params[:id])
+    @personality = Personality[params[:id]]
   end
 end

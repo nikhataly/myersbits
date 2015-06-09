@@ -3,6 +3,7 @@
 
 <% @personalities.each do |personality| %>
 
-<%= link_to image_tag(personality.avatar), personality_path(personality.id) %>
+
+<%= link_to image_tag(personality.avatar), personality_path(personality.mbti) %>
 
 <% end %>
