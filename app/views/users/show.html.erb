@@ -8,21 +8,17 @@
 
 
 <p>
- <strong>My MBTI:</strong>
+ <strong>My MBTI: <%= @user.personality.mbti %></strong>
 
  
  </p>
 
 <p>
- <strong>My profile:</strong>
+ <strong>My projects </strong>
 
 
  </p>
 
-
- <% @projects.each do |project| %>
- Project: <%= project.title %> <br>Description: <%=project.description %> <br> Participants needed: <%= project.participants %> <br> Skills required: <%= project.skills_required %> <br>
-  <% end %>
 
 <section>
     <button id="current-location"> Find projects near me</button>  

@@ -153,13 +153,23 @@ architect = Personality[:intp]
 mastermind = Personality[:intj]
 champion = Personality[:enfp]
 
-user1 = User.create(email: "me@me.com", password: 'abcd', personality: architect, name: "Minime")
-user2 = User.create(email: "sabina@gmail.com", password: 'abcd', personality: mastermind, name: "Sabina")
-user3 = User.create(email: "erin@hotmail.com", password: 'abcd', personality: champion, name: "Erin")
-user4 = User.create(email: "nikhat@yahoo.com", password: 'abcd', personality: architect, name: "Nikhat")
-user5 = User.create(email: "frank@google.com", password: 'abcd', personality: champion, name: "Frank")
+[
+  [{email: "me@me.com", password: 'abcd', personality: architect, name: "Minime"}, "einstein.jpeg"],
+  [{email: "sabina@gmail.com", password: 'abcd', personality: mastermind, name: "Sabina"}, "githubphoto.jpg"],
+  [{email: "grace@hotmail.com", password: 'abcd', personality: champion, name: "Grace"}, "grace_hopper.jpg"],
+  [{email: "nikhat@yahoo.com", password: 'abcd', personality: architect, name: "Nikhat"}, "nikhat.jpg"],
+  [{email: "frank@google.com", password: 'abcd', personality: champion, name: "Frank"}, "frank.jpg"],
+].each_with_index do |(params, avatar_file), n|
+  user = User.create(params)
+  user.avatar.store!(open("app/assets/images/#{avatar_file}"))
+  user.save!
+  
+  define_method "user#{n+1}" do
+    user
+  end
+end
 
-project1 = Project.create(title: "Crowdfunder Practice Session", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 5, user_id: user1.id, address: "220 King St W, Suite 200
+  project1 = Project.create(title: "Crowdfunder Practice Session", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 5, user_id: user1.id, address: "220 King St W, Suite 200
 Toronto, Ontario M5H 1K4", skills_required: "Ruby on Rails, JavaScript, HTML, CSS")
 Project.create(title: "SeatYourself project", description: "Come work with me and build this app together, and learn rails, ajax, javascript, foundation!", start_date: "Tue, 30 June 2015", end_date: "Fri, 31 July 2015", location: "Bitmaker Labs", participants: 5, user_id: user2.id, address: "250 University Avenue, Suite 400
 Toronto, ON M5H 3E5", skills_required: "Ruby on Rails, JavaScript, HTML, CSS")
