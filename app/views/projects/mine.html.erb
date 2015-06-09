@@ -15,15 +15,15 @@ groups = {
   <% end %>
 <% end %>
 
-<div class="well">
-<% current_user.founded_projects.each do |fp| %>
-  <%= fp.title %>
-  <%end%>
-  </div>
 
-  <div class="well">
-<% current_user.joined_projects.each do |jp| %>
-  <%= jp.title %>
+<% current_user.founded_projects.each do |fp| %>
+ 
   <%end%>
-  </div>
+
+
+  
+<% current_user.joined_projects.each do |jp| %>
+
+  <%end%>
+
 

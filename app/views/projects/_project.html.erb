@@ -8,8 +8,12 @@
     Number of empty slots: <%= project.memberships.count - project.memberships.accepted.count%> <br>
     Skills required: <%= project.skills_required %></em></p>
 
+    <% if (current_user && (current_user.is_pending_member?(project))) %>
+      <strong>Membership Request Pending!</strong>
+    <% end %>
+
     <% if current_user && (current_user.is_member?(project) == false or current_user.is_founder?(project) == false) %>
-      <%= button_to 'Join this project', project_memberships_path(project), :method => 'post'%>
+      <%= button_to 'Join this project', project_memberships_path(project), :method => 'post' %>
     <% end %>
 </div>
 

@@ -36,6 +36,10 @@ class User < ActiveRecord::Base
     project.memberships.where(approved: true, user: self).any?
   end
 
+  def is_pending_member?(project)
+    project.memberships.where(approved: false, user: self).any?
+  end
+
   def is_participant?(project)
     is_founder?(project) || is_approved_member?(project)
   end
