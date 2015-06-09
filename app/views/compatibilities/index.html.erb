@@ -3,7 +3,7 @@
 <div class="well">
 <% if current_user %>
   <h2>Your Personality Type</h2><br>
-  <%= link_to image_tag(current_user.personality.avatar), personality_path(current_user.personality.id) %>
+  <%= link_to image_tag(current_user.personality.avatar), personality_path(current_user.personality.mbti) %>
 <% end %>
 </div>
 
@@ -13,7 +13,7 @@
   <% if current_user %>
     <% r = Relationship.where(compatibility: comp, primary: current_user.personality) %>
       <% r.each do |relationship| %>
-        <%= link_to image_tag(relationship.secondary.avatar) %>
+        <%= link_to image_tag(relationship.secondary.avatar), personality_path(relationship.secondary.mbti)  %>
       <% end %>
   <% end %>
 
