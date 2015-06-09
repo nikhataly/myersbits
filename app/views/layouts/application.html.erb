@@ -34,7 +34,7 @@
                        <i class="glyphicon glyphicon-align-justify"></i>
                      <% end %></a>
                      </li>
-                      <li><%= link_to_unless_current('Home', root_path) {  link_to('Home', root_path, class: 'active') } %>
+                      <li><%= link_to_unless_current('Home', projects_path) {  link_to('Home', projects_path, class: 'active') } %>
                       </li>
                   </ul>
               <a class="navbar-brand">myersBits</a>
@@ -107,7 +107,7 @@
                     <a href><%= link_to "Members", users_path %></a>
                 </li>
                 <li>
-                    <a href><%= link_to "My compatibilities", users_path %></a>
+                    <a href><%= link_to "My compatibilities", compatibilities_path %></a>
                 </li>
             </ul>
         </div>

@@ -52,6 +52,11 @@ class User < ActiveRecord::Base
     (membership_requests.where(approved: false)).count
   end
 
+  #def
+    #u = User.find(params[:id])
+    #user.personality.relationships.where(compatibility_id:  2)
+  #end
+
   mount_uploader :avatar, AvatarUploader
 
 end

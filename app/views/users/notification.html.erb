@@ -1,8 +1,13 @@
 
   <h3>Participation requests:</h3>
-  <% (@user.membership_requests.where(approved: false)).each do |request| %>
-    Wants to join: <%= request.project.title %> <br> Participant name: <%= request.user.name %> <br>Participant MBTI type: <%= request.user.personality.mbti %><br>
-    <%= button_to 'View participant profile', user_path(request.user),  :method => 'get' %>
-    <%= button_to 'View compatibility with participant', user_path(request.user),  :method => 'get' %>
-    <%= button_to 'Accept participant request', project_membership_path(request.project, request), :method => 'put'%>
-  <% end %>
+    <div class="well">
+      <p><% (@user.membership_requests.where(approved: false)).each do |request| %>
+        Wants to join: <%= request.project.title %> <br> Participant name: <%= request.user.name %> <br>Participant MBTI type: <%= request.user.personality.mbti %><br>
+      <p>
+    
+      <p><%= button_to 'View participant profile', user_path(request.user),  :method => 'get' %></p>
+      <p> <%= button_to 'View compatibility with participant', user_path(request.user),  :method => 'get' %> </p>
+      <p> <%= button_to 'Accept participant request', project_membership_path(request.project, request), :method => 'put'%> </p>
+    
+    <% end %>
+    </div>

@@ -5,4 +5,5 @@
 <p> SN: <%= @score.openness %><p>
 <p> FT: <%= @score.agreeableness %><p>
 <p> JP: <%= @score.conscientiousness %><p>
-<p> Your new MBTI is: <%= @score.mbti %><p>
+<% personality = Personality.where(mbti: @score.mbti) %>
+<p> Your new MBTI is: <%=  @score.mbti %><p>

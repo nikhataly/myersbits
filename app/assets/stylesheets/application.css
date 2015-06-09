@@ -208,3 +208,17 @@ img {
   height: 500px;
   width: 1000px;
 }
+
+#hero {
+z-index: -1;
+position: fixed;
+right: 0;
+left: 0;
+top: 0;
+height: 600px;
+overflow: hidden;
+min-width: 1045px;
+width:100%;
+transform: scale(1.5);
+-webkit-transform: scale(1.5);
+}
