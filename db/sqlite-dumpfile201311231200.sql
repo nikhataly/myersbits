@@ -1,11 +1,11 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE "compatibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" varchar);
+CREATE TABLE "compatibilities" ("id" SERIAL PRIMARY KEY NOT NULL, "title" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "description" text);
 INSERT INTO "compatibilities" VALUES(1,'Kindred','2015-06-09 21:44:06.241883','2015-06-09 21:44:06.241883','People of the this personality type are more likely than most to share the your values, problem-solving style, and general approach to work. They won''t necessarily agree on everything, and there''s no guarantee they''ll always get along, but they''re more likely to feel an easy rapport and have generally take a similar perspective on important issues.');
 INSERT INTO "compatibilities" VALUES(2,'Inspiring','2015-06-09 21:44:06.246387','2015-06-09 21:44:06.246387','People of the this personality type are likely to strike you as similar in character, but with some key differences which may make them especially inspiring to work with. You may find that working with people of this type offers unique opportunities for growth. Work relationships between you and this type should have a good balance of commonalities and opportunities to share and benefit from fresh skills and perspectives.');
 INSERT INTO "compatibilities" VALUES(3,'Complementing','2015-06-09 21:44:06.250702','2015-06-09 21:44:06.250702','You may not feel an immediate rapport with people of this type, but once you get to know each other, you''ll likely find you have some important things in common, as well as some things to teach one other. Although people of this type may not initially strike you as the most desirable coworkers, their relationships present a lot of potential to complement and learn from one other.');
 INSERT INTO "compatibilities" VALUES(4,'Challenging','2015-06-09 21:44:06.254692','2015-06-09 21:44:06.254692','People of the following type present the most potential for personality clash and conflict with your personality type, but also the best opportunities for growth. Because people of these types have fundamentally different values and motivations from your''s, initially, it may seem impossible to relate. But because they are so different, their strengths are the your weaknesses, and if you are able to develop a healthy working relationship, you can learn a tremendous amount from each other.');
-CREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "approved" boolean DEFAULT 'f');
+CREATE TABLE "memberships" ("id" SERIAL PRIMARY KEY NOT NULL, "project_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "approved" boolean DEFAULT 'f');
 INSERT INTO "memberships" VALUES(1,1,2,'2015-06-09 21:44:06.211895','2015-06-09 21:44:06.211895','t');
 INSERT INTO "memberships" VALUES(2,1,3,'2015-06-09 21:44:06.216878','2015-06-09 21:44:06.216878','t');
 INSERT INTO "memberships" VALUES(3,1,4,'2015-06-09 21:44:06.221649','2015-06-09 21:44:06.221649','t');
@@ -18,7 +18,7 @@ INSERT INTO "memberships" VALUES(9,8,1,'2015-06-09 22:42:53.833450','2015-06-09 
 INSERT INTO "memberships" VALUES(10,10,1,'2015-06-15 20:02:38.708234','2015-06-15 20:02:38.708234','f');
 INSERT INTO "memberships" VALUES(11,3,1,'2015-07-09 20:14:54.380909','2015-07-09 20:14:54.380909','f');
 INSERT INTO "memberships" VALUES(12,7,1,'2015-11-13 18:00:22.013847','2015-11-13 18:00:22.013847','f');
-CREATE TABLE "personalities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mbti" varchar, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "as_leader" text, "as_team" text, "at_work" text, "traits" text, "description" text);
+CREATE TABLE "personalities" ("id" SERIAL PRIMARY KEY NOT NULL, "mbti" text, "title" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "as_leader" text, "as_team" text, "at_work" text, "traits" text, "description" text);
 INSERT INTO "personalities" VALUES(1,'ISTJ','The Inspector','2015-06-09 21:44:02.943315','2015-06-09 21:44:02.943315',NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "personalities" VALUES(2,'ISFJ','The Protector','2015-06-09 21:44:02.950187','2015-06-09 21:44:02.950187',NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "personalities" VALUES(3,'INFJ','The Counselor','2015-06-09 21:44:02.954103','2015-06-09 21:44:02.954103',NULL,NULL,NULL,NULL,NULL);
@@ -93,7 +93,7 @@ INSERT INTO "personalities" VALUES(13,'ESTJ','The Supervisor','2015-06-09 21:44:
 INSERT INTO "personalities" VALUES(14,'ESFJ','The Provider','2015-06-09 21:44:02.997296','2015-06-09 21:44:02.997296',NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "personalities" VALUES(15,'ENFJ','The Teacher','2015-06-09 21:44:03.000317','2015-06-09 21:44:03.000317',NULL,NULL,NULL,NULL,NULL);
 INSERT INTO "personalities" VALUES(16,'ENTJ','The Commander','2015-06-09 21:44:03.003357','2015-06-09 21:44:03.003357',NULL,NULL,NULL,NULL,NULL);
-CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "start_date" datetime, "end_date" datetime, "location" text, "user_id" integer, "type_id" integer, "participants" integer, "skills_required" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "address" varchar, "longitude" decimal(9,6), "latitude" decimal(9,6));
+CREATE TABLE "projects" ("id" SERIAL PRIMARY KEY NOT NULL, "title" text, "description" text, "start_date" timestamp, "end_date" timestamp, "location" text, "user_id" integer, "type_id" integer, "participants" integer, "skills_required" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "address" text, "longitude" decimal(9,6), "latitude" decimal(9,6));
 INSERT INTO "projects" VALUES(1,'Crowdfunder Practice Session','Come work with me and build this app together, and learn rails, ajax, javascript, foundation!','2015-06-30 00:00:00.000000','2015-07-31 00:00:00.000000','Bitmaker Labs',1,NULL,5,'Ruby on Rails, JavaScript, HTML, CSS','2015-06-09 21:44:05.195196','2015-06-09 21:44:05.195196','220 King St W, Suite 200
 Toronto, Ontario M5H 1K4',-79.3870757,43.6472849);
 INSERT INTO "projects" VALUES(2,'SeatYourself project','Come work with me and build this app together, and learn rails, ajax, javascript, foundation!','2015-06-30 00:00:00.000000','2015-07-31 00:00:00.000000','Bitmaker Labs',2,NULL,5,'Ruby on Rails, JavaScript, HTML, CSS','2015-06-09 21:44:05.385687','2015-06-09 21:44:05.385687','250 University Avenue, Suite 400
@@ -114,8 +114,8 @@ INSERT INTO "projects" VALUES(9,'Learning session Ruby on Rails Rubeque exercise
 Toronto, Ontario M5H 1K4',-79.3870757,43.6472849);
 INSERT INTO "projects" VALUES(10,'Curiculum Vitae Web developer','Looking to polish my resume and getting a second opinion, willing to help back with resume','2015-06-30 00:00:00.000000','2015-07-31 00:00:00.000000','Bitmaker Labs',5,NULL,3,'Resume tips','2015-06-09 21:44:06.180246','2015-06-09 21:44:06.180246','220 King St W, Suite 200
 Toronto, Ontario M5H 1K4',-79.3870757,43.6472849);
-CREATE TABLE "recommendations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "personality_id" varchar, "recommendation" varchar, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "primary_id" integer, "compatibility_id" integer, "secondary_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "recommendations" ("id" SERIAL PRIMARY KEY NOT NULL, "personality_id" text, "recommendation" text, "text" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL);
+CREATE TABLE "relationships" ("id" SERIAL PRIMARY KEY NOT NULL, "primary_id" integer, "compatibility_id" integer, "secondary_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL);
 INSERT INTO "relationships" VALUES(1,6,1,6,'2015-06-09 21:44:06.272256','2015-06-09 21:44:06.272256');
 INSERT INTO "relationships" VALUES(2,6,1,5,'2015-06-09 21:44:06.276366','2015-06-09 21:44:06.276366');
 INSERT INTO "relationships" VALUES(3,6,1,10,'2015-06-09 21:44:06.280495','2015-06-09 21:44:06.280495');
@@ -372,7 +372,7 @@ INSERT INTO "relationships" VALUES(253,10,4,8,'2015-06-09 21:44:07.248958','2015
 INSERT INTO "relationships" VALUES(254,10,4,4,'2015-06-09 21:44:07.252476','2015-06-09 21:44:07.252476');
 INSERT INTO "relationships" VALUES(255,10,4,3,'2015-06-09 21:44:07.255798','2015-06-09 21:44:07.255798');
 INSERT INTO "relationships" VALUES(256,10,4,16,'2015-06-09 21:44:07.259120','2015-06-09 21:44:07.259120');
-CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "extraversion" integer, "openness" integer, "agreeableness" integer, "conscientiousness" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "answers" text);
+CREATE TABLE "scores" ("id" SERIAL PRIMARY KEY NOT NULL, "extraversion" integer, "openness" integer, "agreeableness" integer, "conscientiousness" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "answers" text);
 INSERT INTO "scores" VALUES(1,24,24,24,24,3,'2015-06-09 21:48:23.481949','2015-06-09 21:48:23.481949','---
 0: 3
 1: 3
@@ -747,13 +747,13 @@ INSERT INTO "scores" VALUES(11,22,19,25,25,1,'2015-11-13 18:54:29.439859','2015-
 30: 1
 31: 1
 ');
-CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "crypted_password" varchar, "salt" varchar, "personality_id" integer, "name" varchar, "created_at" datetime, "updated_at" datetime, "reset_password_token" varchar, "reset_password_token_expires_at" datetime, "reset_password_email_sent_at" datetime, "remember_me_token" varchar, "remember_me_token_expires_at" datetime, "avatar" varchar);
+CREATE TABLE "users" ("id" SERIAL PRIMARY KEY NOT NULL, "email" text NOT NULL, "crypted_password" text, "salt" text, "personality_id" integer, "name" text, "created_at" timestamp, "updated_at" timestamp, "reset_password_token" text, "reset_password_token_expires_at" timestamp, "reset_password_email_sent_at" timestamp, "remember_me_token" text, "remember_me_token_expires_at" timestamp, "avatar" text);
 INSERT INTO "users" VALUES(1,'me@me.com','$2a$10$76LM/nS9ZU7thIYUBUXlo.tT4xDGU5pmCnQOBbTUHJSuqcKjlSs7K','qrmap8dESCoczpRhh3ka',5,'Minime','2015-06-09 21:44:03.307464','2015-11-13 18:54:29.450387',NULL,NULL,NULL,NULL,NULL,'einstein.jpeg');
 INSERT INTO "users" VALUES(2,'sabina@gmail.com','$2a$10$cwcBoTkdjgw7WtglYv4Ed.jITHdyVsrcoeWt8LCOd5kBwKvdPMRea','7GU7vfoEBd2gGiuS3M3t',4,'Sabina','2015-06-09 21:44:03.693845','2015-06-09 21:44:03.850818',NULL,NULL,NULL,NULL,NULL,'githubphoto.jpg');
 INSERT INTO "users" VALUES(3,'grace@hotmail.com','$2a$10$46Ksw7gBTKXLwWGZZsosIO2oDFW2lNv3YjOSyo6lL.GXo.kpf.dQW','8fEtbmzSDL4cepjnt78s',11,'Grace','2015-06-09 21:44:04.059151','2015-06-09 21:49:52.219420',NULL,NULL,NULL,NULL,NULL,'grace_hopper.jpg');
 INSERT INTO "users" VALUES(4,'nikhat@yahoo.com','$2a$10$3YoJY98udniC053IVAXK8e0YIfkjNacy/Baa0IfXH5iLWRhveGpSm','sqJQQzUC8S6qn7zZWFz9',8,'Nikhat','2015-06-09 21:44:04.390283','2015-06-09 21:44:04.491845',NULL,NULL,NULL,NULL,NULL,'nikhat.jpg');
 INSERT INTO "users" VALUES(5,'frank@google.com','$2a$10$eVWPSUkJ96AP0pRTdyykd.g0GX9YJBY4KPxxnNKZimJasyAIPepdq','CwFs2zYWh7UooeJkp2fY',11,'Frank','2015-06-09 21:44:04.688368','2015-06-09 21:44:04.898922',NULL,NULL,NULL,NULL,NULL,'frank.jpg');
-CREATE TABLE "schema_migrations" ("version" varchar NOT NULL);
+CREATE TABLE "schema_migrations" ("version" text NOT NULL);
 INSERT INTO "schema_migrations" VALUES('20150608230348');
 INSERT INTO "schema_migrations" VALUES('20150521215301');
 INSERT INTO "schema_migrations" VALUES('20150521230142');
@@ -779,14 +779,6 @@ INSERT INTO "schema_migrations" VALUES('20150608170526');
 INSERT INTO "schema_migrations" VALUES('20150608170942');
 INSERT INTO "schema_migrations" VALUES('20150608181535');
 INSERT INTO "schema_migrations" VALUES('20150608210239');
-DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('personalities',16);
-INSERT INTO "sqlite_sequence" VALUES('users',5);
-INSERT INTO "sqlite_sequence" VALUES('projects',11);
-INSERT INTO "sqlite_sequence" VALUES('memberships',12);
-INSERT INTO "sqlite_sequence" VALUES('compatibilities',4);
-INSERT INTO "sqlite_sequence" VALUES('relationships',256);
-INSERT INTO "sqlite_sequence" VALUES('scores',11);
 CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email");
 CREATE INDEX "index_users_on_remember_me_token" ON "users" ("remember_me_token");
 CREATE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token");
