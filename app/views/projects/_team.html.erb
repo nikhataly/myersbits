@@ -1,5 +1,6 @@
 <div class="well">
-    <p>Your Personality type: <%= current_user.personality.mbti %></p><br>
+    <p>Your Personality type: <%= current_user.personality.mbti %></p>
+    <p>You are a member in this project</p><br>
     <p>Other Members: </p>
     <%@project.other_members(current_user).each do |member| %>
     <%= member.name %>, <%= member.personality.mbti %> <br>
