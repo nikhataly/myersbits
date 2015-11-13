@@ -12,7 +12,7 @@ test:
 
 production:
   adapter: postgresql
-  database: myersbits_production
+  database: myersbits_development
   pool: 5
   timeout: 5000
 
