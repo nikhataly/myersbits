@@ -12,7 +12,8 @@ test:
 
 production:
   adapter: postgresql
-  database: myersbits_development
+  database: myersbits
+  host: localhost
   pool: 5
   timeout: 5000
 
