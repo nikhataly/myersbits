@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
-
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
-
+gem 'sass-rails', '~> 5.0'
+gem 'pg'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -52,8 +53,7 @@ gem 'remotipart'
 gem 'geocoder'
 gem 'figaro'
 
-group :development, :production do
-  gem 'pg'
+group :production do
   gem 'rails_12factor'
   gem 'puma'
 end
@@ -67,8 +67,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'awesome_print'
   gem 'did_you_mean'
-  gem 'sqlite3'
-  gem 'sass-rails', '~> 5.0'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
