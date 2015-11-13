@@ -54,6 +54,8 @@ gem 'figaro'
 
 group :development, :production do
   gem 'pg'
+  gem 'rails_12factor'
+  gem 'puma'
 end
 
 group :development, :test do
