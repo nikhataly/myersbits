@@ -10,8 +10,8 @@ function geolocationSuccess(position) {
     data: {
       longitude: longitude,
       latitude: latitude
-    }
-    datatype: 'script'
+    },
+    dataType: 'script'
   });
 }
 
@@ -23,12 +23,12 @@ function geolocationError() {
 $(document).on("ready page:load", function() {
   $("#current-location").click(function(ev) {
     ev.preventDefault();
- 
+
 
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError);
     } else {
       alert("Current browser doesn't support geolocation");
-    } 
+    }
   });
 });
