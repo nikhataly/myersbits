@@ -5,7 +5,7 @@
     Location: <%= project.location %> <br>
     Founder: <%= project.user.name %> <br>
     Number of Participants: <%= (project.memberships.accepted.count + 1) %><br>
-    Number of empty slots: <%= project.participants - project.memberships.accepted.count%> <br>
+    Number of empty slots: <%= project.participants - project.memberships.accepted.count - 1 %> <br>
     Skills required: <%= project.skills_required %></em></p>
 
     <% if (current_user && (current_user.is_pending_member?(project))) %>
