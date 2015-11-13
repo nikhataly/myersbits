@@ -6,13 +6,13 @@ development:
 
 test:
   adapter: postgresql
-  database: myersbits_development
+  database: myersbits_test
   pool: 5
   timeout: 5000
 
 production:
   adapter: postgresql
-  database: myersbits_development
+  database: myersbits_production
   pool: 5
   timeout: 5000
 
