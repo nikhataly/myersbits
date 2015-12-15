@@ -461,7 +461,7 @@ end
 
 
 users = User.all
-project = Project.create(user: users[0], title: "asdf", description: "Asdfasdf", start_date: Time.now, address: "57 What St, Toronto")
+project = Project.last
 users[1..-1].each { |u| project.memberships.create(user: u, approved: true) }
 
 
