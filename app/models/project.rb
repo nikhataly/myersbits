@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
   has_many :memberships
   has_many :members, through: :memberships, source: :user
 
-  validates :title, :description, :paricipants, presence: true
+  validates :title, :description, :participants, presence: true
   validate :start_date_cannot_be_in_the_past
 
   def start_date_cannot_be_in_the_past
